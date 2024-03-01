@@ -3,24 +3,29 @@
     <div>
         <header>
 
-            <img src="/shared/desktop/logo.svg" alt="logo audiophile"/>
+            <div class="main-header">
+                <img src="/shared/desktop/logo.svg" alt="logo audiophile"/>
+    
+                <nav>
+                    <NuxtLink class="nav-link" to="/">Home</NuxtLink>
+                    <NuxtLink class="nav-link" to="/Headphones">Headphones</NuxtLink>
+                    <NuxtLink class="nav-link" to="/Speakers">Speakers</NuxtLink>
+                    <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>  
+                </nav>
+                
+                <button class="cart-btn" @click="switchCard">
+                    <img src="/shared/desktop/icon-cart.svg" alt="Cart"/>
+                </button>
+    
+                <div class="cart-card" v-if="showCartCard">
+                    <CartCard />
+                </div>
+                <div class="bg-dark" v-if="showCartCard" @click="switchCard"></div>
 
-            <nav>
-                <NuxtLink class="nav-link" to="/">Home</NuxtLink>
-                <NuxtLink class="nav-link" to="/Headphones">Headphones</NuxtLink>
-                <NuxtLink class="nav-link" to="/Speakers">Speakers</NuxtLink>
-                <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>  
-            </nav>
-            
-            <button class="cart-btn" @click="switchCard">
-                <img src="/shared/desktop/icon-cart.svg" alt="Cart"/>
-            </button>
-
-            <div class="cart-card" v-if="showCartCard">
-                <CartCard />
             </div>
-            <div class="bg-dark" v-if="showCartCard" @click="switchCard"></div>
 
+            
+            <hr/>
         </header>
         <slot></slot>
     </div>
@@ -41,15 +46,24 @@
 
 <style lang="scss" scoped>
 
+
 header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    border: none;
+    padding: 2rem 10%;
+}
+
+.main-header{
     position: relative;
-    background-color: $black;
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 15%;
-
+    
+    margin-bottom: 2rem;
 }
 
 .nav-link{
@@ -86,4 +100,10 @@ header{
     background-color: rgba(0,0,0,.4);
 }
 
+hr{
+    height: 0;
+    border: none;
+    border-top: .5px solid $p-dark-grey;
+    
+}
 </style>
