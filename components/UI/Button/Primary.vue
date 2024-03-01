@@ -1,11 +1,11 @@
 <template>
 
-    <button>See Product</button>
+    <button @click="emit('onClick')" >See Product</button>
 
 
 </template>
-<script lang="ts">
-
+<script lang="ts" setup>
+    const emit = defineEmits(['onClick'])
 
 
 </script>

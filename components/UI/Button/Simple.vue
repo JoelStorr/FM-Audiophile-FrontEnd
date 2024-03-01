@@ -1,11 +1,11 @@
 <template>
 
-    <button>Shop <img src="~/assets/shared/desktop/icon-arrow-right.svg"></button>
+    <button @click="emit('onClick')" >Shop <img src="~/assets/shared/desktop/icon-arrow-right.svg"></button>
 
 
 </template>
-<script lang="ts">
-
+<script lang="ts" setup>
+    const emit = defineEmits(['onClick'])
 
 
 </script>
