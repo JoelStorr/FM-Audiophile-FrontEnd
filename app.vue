@@ -1,14 +1,6 @@
 <template>
 
-  <div>
-   <UIRadioButton :is-checked="checked" value="One" @radio-change="changeChecked" >e-Money</UIRadioButton>
-   <UIRadioButton :is-checked="checked" value="Two" @radio-change="changeChecked">card</UIRadioButton>
-   
-    
-    
-   
-
-  </div>
+  <UICounter/>
 </template>
 <script setup>
   const checked = useState('checked',()=>'Two');
@@ -26,7 +18,7 @@
   }
 
   div{
-    width: 1200px;
+    width: 200px;
   }
 
 </style>
