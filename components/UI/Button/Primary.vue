@@ -1,6 +1,8 @@
 <template>
 
-    <button @click="emit('onClick')" >See Product</button>
+    <button @click="emit('onClick')" >
+    <slot></slot>
+    </button>
 
 
 </template>
