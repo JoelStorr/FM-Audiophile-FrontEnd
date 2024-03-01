@@ -1,5 +1,13 @@
 <template>
-  <UIButtonSimple></UIButtonSimple>
+
+  <div>
+    <UITextField :error="false">
+        Name
+      <template #error>Not Valid</template>
+    
+    </UITextField>
+
+  </div>
 </template>
 
 
@@ -7,6 +15,10 @@
 
   h1{
     color: $primary;
+  }
+
+  div{
+    width: 100px;
   }
 
 </style>
