@@ -1,56 +1,53 @@
 <template>
-    <div class="label" :class="props.isChecked == props.value ? 'active' : '' ">
-        <label class="form-control">
-            <input type="radio" :value="props.value" v-model="isChecked" @change="changeCeck"/>
-        </label>
-        <p><slot></slot></p>
-
-    </div>
-     
-
+  <div class="label" :class="props.isChecked == props.value ? 'active' : ''">
+    <label class="form-control">
+      <input
+        type="radio"
+        :value="props.value"
+        v-model="isChecked"
+        @change="changeCeck"
+      />
+    </label>
+    <p><slot></slot></p>
+  </div>
 </template>
 
 <script lang="ts" setup>
-
 const props = defineProps({
-    isChecked: {type: String, required: true},
-    value: {type: String, required: true}
-})
-const emits = defineEmits(['radioChange'])
-const isChecked = useState('isChecked', ()=>props.isChecked)
+  isChecked: { type: String, required: true },
+  value: { type: String, required: true },
+});
+const emits = defineEmits(["radioChange"]);
+const isChecked = useState("isChecked", () => props.isChecked);
 
-function changeCeck():void{
-    emits('radioChange', isChecked.value)
+function changeCeck(): void {
+  emits("radioChange", isChecked.value);
 }
-
-
 </script>
 
-
 <style lang="scss" scoped>
-
-.label{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: .1rem solid $input-outline;
-    border-radius: 1rem;
-    padding: 1.5rem 1rem;
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0.1rem solid $input-outline;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
 }
 
-.active{
-    border: .1rem solid $primary;
+.active {
+  border: 0.1rem solid $primary;
 }
 
-p{
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
+p {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
-span{
-    font-weight: bold;
+span {
+  font-weight: bold;
 }
 
 .form-control {
@@ -83,7 +80,6 @@ input[type="radio"] {
   height: 1.8rem;
   border: 0.1rem solid currentColor;
   border-radius: 50%;
-  
 
   display: grid;
   place-content: center;
@@ -102,10 +98,6 @@ input[type="radio"]::before {
 }
 
 input[type="radio"]:checked::before {
-  transform: scale(.9);
+  transform: scale(0.9);
 }
-
-
-
-
 </style>
