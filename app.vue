@@ -1,5 +1,5 @@
 <template>
-  <UIButtonPrimary></UIButtonPrimary>
+  <UIButtonSimple></UIButtonSimple>
 </template>
 
 
