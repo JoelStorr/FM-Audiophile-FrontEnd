@@ -1,0 +1,3 @@
+<template>
+    <h1>Speakers</h1>
+</template>
