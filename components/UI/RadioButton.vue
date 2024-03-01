@@ -3,7 +3,7 @@
         <label class="form-control">
             <input type="radio" :value="props.value" v-model="isChecked" @change="changeCeck"/>
         </label>
-        <p>palceholde text</p>
+        <p><slot></slot></p>
 
     </div>
      
@@ -31,14 +31,22 @@ function changeCeck():void{
 
 .label{
     display: flex;
-    
     flex-direction: row;
     align-items: center;
-    border: .1rem solid $p-dark-grey;
+    border: .1rem solid $input-outline;
     border-radius: 1rem;
+    padding: 1.5rem 1rem;
 }
+
 .active{
     border: .1rem solid $primary;
+}
+
+p{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
 }
 
 span{
@@ -70,12 +78,12 @@ input[type="radio"] {
   margin: 0;
 
   font: inherit;
-  color: $p-dark-grey;
-  width: 2rem;
-  height: 2rem;
+  color: $input-outline;
+  width: 1.8rem;
+  height: 1.8rem;
   border: 0.1rem solid currentColor;
   border-radius: 50%;
-  transform: translateY(-0.075em);
+  
 
   display: grid;
   place-content: center;
@@ -94,7 +102,7 @@ input[type="radio"]::before {
 }
 
 input[type="radio"]:checked::before {
-  transform: scale(1);
+  transform: scale(.9);
 }
 
 

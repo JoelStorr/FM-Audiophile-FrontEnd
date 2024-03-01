@@ -1,8 +1,8 @@
 <template>
 
   <div>
-   <UIRadioButton :is-checked="checked" value="One" @radio-change="changeChecked" />
-   <UIRadioButton :is-checked="checked" value="Two" @radio-change="changeChecked" />
+   <UIRadioButton :is-checked="checked" value="One" @radio-change="changeChecked" >e-Money</UIRadioButton>
+   <UIRadioButton :is-checked="checked" value="Two" @radio-change="changeChecked">card</UIRadioButton>
    
     
     
