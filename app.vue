@@ -1,15 +1,23 @@
 <template>
 
   <div>
-    <UITextField :error="false">
-        Name
-      <template #error>Not Valid</template>
+   <UIRadioButton :is-checked="checked" value="One" @radio-change="changeChecked" />
+   <UIRadioButton :is-checked="checked" value="Two" @radio-change="changeChecked" />
+   
     
-    </UITextField>
+    
+   
 
   </div>
 </template>
+<script setup>
+  const checked = useState('checked',()=>'Two');
+  function changeChecked(value){
+    checked.value = value;
+    console.log(value)
+  }
 
+</script>
 
 <style lang="scss">
 
@@ -18,7 +26,7 @@
   }
 
   div{
-    width: 100px;
+    width: 1200px;
   }
 
 </style>
