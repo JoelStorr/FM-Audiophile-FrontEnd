@@ -16,9 +16,9 @@
       <CategoryCard name="Earphones" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-earphones.png"/>
    </section>
    <section class="speaker-hero-holder">
-    <HomeSpeakerGrid />
-
-   </section>
+        <HomeSpeakerGrid />
+        <HomeAudioText />
+    </section>
 
 
 </template>

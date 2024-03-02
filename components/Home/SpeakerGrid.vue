@@ -19,6 +19,14 @@
         <UIButtonSecondary></UIButtonSecondary>
     </div>
 
+    <div class="headphones-product">
+        <img src="/home/desktop/image-earphones-yx1.jpg" />
+        <div class="">
+            <h3>YX1 Earphones</h3>
+            <UIButtonSecondary></UIButtonSecondary>
+        </div>
+    </div>
+
 </template>
 
 <script setup>
@@ -89,10 +97,35 @@
 .speaker-product{
     width: 100%;
     padding: 5rem;
-    background-image: url("public/home/desktop/image-speaker-zx7.jpg");
+    background-image: url("/home/desktop/image-speaker-zx7.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 1rem;
+}
+
+.headphones-product{
+    margin-top: 5rem;
+    display: flex;
+
+    & img{
+        border-radius: 1rem;
+        margin-right: 1rem;
+        
+        flex: 1;
+    }
+
+
+    & div{
+        flex: 2;
+        background-color: $p-grey;
+        margin-left: 1rem;
+        border-radius: 1rem;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
 }
 
 </style>
