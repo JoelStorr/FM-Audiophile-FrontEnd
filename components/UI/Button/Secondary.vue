@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 
 button {
-    background-color: $white;
+    background-color: rgba(0,0,0,0);
     border: none;
     font-weight: bold;
     text-transform: uppercase;
