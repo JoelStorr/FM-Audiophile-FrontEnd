@@ -28,6 +28,10 @@
             <hr/>
         </header>
         <slot></slot>
+        <footer>
+             <img src="/shared/desktop/logo.svg" alt="logo audiophile"/>
+        </footer>
+
     </div>
 
 </template>
@@ -106,4 +110,10 @@ hr{
     border-top: .5px solid $p-dark-grey;
     
 }
+
+footer{
+    background-color: $p-black;
+    padding: 2rem 10%;
+}
+
 </style>
