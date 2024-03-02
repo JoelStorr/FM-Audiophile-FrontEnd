@@ -14,10 +14,13 @@
     <CategoryCard name="Headphones" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-headphones.png"/>
      <CategoryCard name="Speakers" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-speakers.png"/>
       <CategoryCard name="Earphones" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-earphones.png"/>
-
-
+   </section>
+   <section class="speaker-hero-holder">
+    <HomeSpeakerGrid />
 
    </section>
+
+
 </template>
 
 
@@ -87,10 +90,14 @@ h1{
 
 
 .category-cards{
-    padding: 10rem 10%;
+    padding: 20rem 10% 15rem 10%;
     display: flex;
     justify-content: space-between;
 }
 
+.speaker-hero-holder{
+    padding: 0 10%;
+    
+}
 
 </style>
