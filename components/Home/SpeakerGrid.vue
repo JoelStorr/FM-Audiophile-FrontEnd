@@ -1,41 +1,49 @@
 <template>
-  <div class="speaker-hero">
-    <div class="img-holder">
-      <img class="speaker" src="/home/desktop/image-speaker-zx9.png" />
-    </div>
-    <img class="rings" src="/home/desktop/pattern-circles.svg" />
-    <div class="content-holder">
-      <h1>
-        ZX9 <br />
-        Speaker
-      </h1>
-      <p>
-        Upgrade to premium speakers that are phenomenally built to deliver truly
-        remarkable sound.
-      </p>
-      <div>
-        <UIButtonPrimaryDark>See Product</UIButtonPrimaryDark>
-        <div class="btn-spacer"></div>
+  <section class="speaker-grid">
+    <div class="speaker-hero">
+      <div class="img-holder">
+        <img class="speaker" src="/home/desktop/image-speaker-zx9.png" />
+      </div>
+      <img class="rings" src="/home/desktop/pattern-circles.svg" />
+      <div class="content-holder">
+        <h1>
+          ZX9 <br />
+          Speaker
+        </h1>
+        <p>
+          Upgrade to premium speakers that are phenomenally built to deliver truly
+          remarkable sound.
+        </p>
+        <div>
+          <UIButtonPrimaryDark>See Product</UIButtonPrimaryDark>
+          <div class="btn-spacer"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="speaker-product">
-    <h2>ZX7 Speaker</h2>
-    <UIButtonSecondary></UIButtonSecondary>
-  </div>
-
-  <div class="headphones-product">
-    <img src="/home/desktop/image-earphones-yx1.jpg" />
-    <div class="">
-      <h3>YX1 Earphones</h3>
+    <div class="speaker-product">
+      <h2>ZX7 Speaker</h2>
       <UIButtonSecondary></UIButtonSecondary>
     </div>
-  </div>
+  
+    <div class="headphones-product">
+      <img src="/home/desktop/image-earphones-yx1.jpg" />
+      <div class="">
+        <h3>YX1 Earphones</h3>
+        <UIButtonSecondary></UIButtonSecondary>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup></script>
 
 <style lang="scss" scoped>
+
+.speaker-grid{
+  padding: 2rem 10% 2rem 10%;
+}
+
+
 .speaker-hero {
   position: relative;
   width: 100%;
@@ -44,8 +52,10 @@
   display: flex;
   overflow: hidden;
   border-radius: 1rem;
-  margin-bottom: 5rem;
+
 }
+
+
 
 .img-holder {
   position: relative;
@@ -97,6 +107,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 1rem;
+  margin-top: 5rem;
 }
 
 .headphones-product {
