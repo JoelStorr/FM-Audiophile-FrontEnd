@@ -9,7 +9,12 @@
    <div class="hero-spacer">
     <img src="/home/desktop/headphones-hero.png"/>
    </div>
-    
+   </section>
+   <section class="category-cards">
+    <CategoryCard name="Headphones" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-headphones.png"/>
+     <CategoryCard name="Speakers" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-speakers.png"/>
+      <CategoryCard name="Earphones" to="/headphones" img-src="/shared/desktop/image-category-thumbnail-earphones.png"/>
+
 
 
    </section>
@@ -67,15 +72,24 @@
         
     }
 }
-h1{
-    color: $white;
-}
+
 
 .hero-bg-image{
     width: auto;
     height: 600px;
 
     border: 1px solid red;
+}
+
+h1{
+    color: $white;
+}
+
+
+.category-cards{
+    padding: 10rem 10%;
+    display: flex;
+    justify-content: space-between;
 }
 
 

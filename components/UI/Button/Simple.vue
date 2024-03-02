@@ -1,6 +1,6 @@
 <template>
 
-    <button @click="emit('onClick')" >Shop <img src="~/assets/shared/desktop/icon-arrow-right.svg"></button>
+    <button @click="emit('onClick')" >Shop <img src="/shared/desktop/icon-arrow-right.svg"></button>
 
 
 </template>
@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 
 button {
-    background-color: $white;
+    background-color: rgba(0,0,0,0);
     border: none;
     font-weight: bold;
     text-transform: uppercase;
