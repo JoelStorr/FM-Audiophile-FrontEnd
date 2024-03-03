@@ -1,7 +1,9 @@
 <template>
   <div>
     <button @click="number--">-</button>
-    {{ number }}
+    <p>
+      {{ number }}
+    </p>
     <button @click="number++">+</button>
   </div>
 </template>
@@ -19,6 +21,13 @@ div {
   display: flex;
   justify-content: space-between;
 }
+
+p{
+  margin: 0;
+  padding: 0 1.2rem;
+  font-weight: bold;
+}
+
 
 button {
   background-color: rgba(0, 0, 0, 0);
