@@ -8,9 +8,24 @@
             <p>Total</p>
             <h6>$5,396</h6>
         </div>
-        <UIButtonPrimary>Checkout</UIButtonPrimary>
+        <NuxtLink class="nuxt-link" to="/checkout">
+            <UIButtonPrimary @on-click="hider">Checkout</UIButtonPrimary>
+        </NuxtLink>
     </div>
 </template>
+
+<script setup>
+
+    let emit = defineEmits(['hideCard'])
+
+    function hider(){
+        console.log('Ran hider')
+        emit('hideCard')
+    }
+
+
+</script>
+
 
 <style lang="scss" scoped>
     .container{
@@ -41,5 +56,13 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .nuxt-link{
+        width: 100%;
+
+        & :first-child{
+            width: 100%;
+        }
     }
 </style>

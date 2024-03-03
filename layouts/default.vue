@@ -14,15 +14,14 @@
         <button class="cart-btn" @click="switchCard">
           <img src="/shared/desktop/icon-cart.svg" alt="Cart" />
         </button>
-
-        <div class="cart-card" v-if="showCartCard">
-          <CartCard />
-        </div>
-        <div class="bg-dark" v-if="showCartCard" @click="switchCard"></div>
+        
       </div>
-
       <hr />
     </header>
+    <div class="cart-card" v-if="showCartCard">
+      <CartCard @hideCard="switchCard" />
+    </div>
+    <div class="bg-dark" v-if="showCartCard" @click="switchCard"></div>
     <slot></slot>
     <footer>
       <div class="highlight"></div>
