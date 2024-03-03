@@ -1,7 +1,7 @@
 <template>
   <div class="header"></div>
   <div class="product-content-holder">
-    <a class="back-btn" @click="$router.back()">Go Back</a>
+    <UIButtonBack />
 
     <section class="main-product-section">
       <div class="image-holder">
@@ -98,11 +98,6 @@
   background-color: $black;
 }
 
-.back-btn {
-  display: block;
-  font-size: 1.5rem;
-  padding-bottom: 4rem;
-}
 
 .product-content-holder {
   padding: 4rem 10% 1rem 10%;
