@@ -15,6 +15,7 @@
 <style lang="scss" scoped>
 
 button {
+    width: 100%;
     background-color: $primary;
     border: none;
     font-weight: bold;
