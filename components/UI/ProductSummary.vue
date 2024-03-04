@@ -6,7 +6,7 @@
             <p>XX99 MK ||</p>
             <p>$2.999</p>
         </div>
-        <p>x1</p>
+        <p class="count">x1</p>
     </div>
 
 
@@ -45,6 +45,11 @@
         }
     }
 
-
+    .count{
+        margin: 0;
+        align-self: flex-start;
+        font-weight: bold;
+        color: $p-dark-grey;
+    }
 
 </style>
