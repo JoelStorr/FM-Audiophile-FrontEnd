@@ -6,6 +6,10 @@ export default defineNuxtConfig({
     "~/assets/style/main.scss", // you should add main.scss somewhere in your app
   ],
 
+  modules:[
+    '@pinia/nuxt',
+  ],
+
   vite: {
     css: {
       preprocessorOptions: {
