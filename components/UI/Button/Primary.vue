@@ -1,12 +1,16 @@
 <template>
 
-    <button @click="emit('onClick')" >
+    <button :class="props.fullLength ? 'full-length' : ''"@click="emit('onClick')" >
     <slot></slot>
     </button>
 
 
 </template>
 <script lang="ts" setup>
+    const props = defineProps({
+        fullLength: {type: Boolean}
+    })
+    
     const emit = defineEmits(['onClick'])
 
 
@@ -15,7 +19,7 @@
 <style lang="scss" scoped>
 
 button {
-    width: 100%;
+    
     background-color: $primary;
     border: none;
     font-weight: bold;
@@ -29,5 +33,9 @@ button {
         background-color: $secondary;
     }
 };
+
+.full-length{
+    width: 100%;
+}
 
 </style>
