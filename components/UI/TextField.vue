@@ -25,13 +25,15 @@
 <style lang="scss" scoped>
 
     label{
+        width:100%;
         display: flex;
         flex-direction: column;
         font-weight: bold;
     }
 
     .label-text{
-        
+        font-size: 1.4rem;
+        padding-bottom: .5rem;
     }
 
     .name-error-holder{
@@ -45,10 +47,14 @@
     input{
         border: 0.1rem solid $input-outline;
         outline: none;
-        border-radius: 0.2rem;
-        padding: .3rem;
+        border-radius: 1rem;
+        padding: 1.5rem;
         font-weight: bold;
+        font-size: 1.4rem;
+        letter-spacing: -0.025px;
         caret-color: $primary;
+        height: 5rem;
+
         &:focus{
             outline: none;
             border: 1px solid $primary;
