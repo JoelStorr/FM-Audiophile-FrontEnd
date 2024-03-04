@@ -9,7 +9,7 @@
                 <slot name="error"></slot>
             </span>
         </span>
-        <input type="text" placeholder="Demo Text">
+        <input type="text" placeholder="Demo Text" @input="changeValue">
     </label>
 
 </template>
@@ -19,6 +19,11 @@
         error: {type: Boolean, required: true},
     })
 
+    const emits = defineEmits('valueChange')
+
+    function changeValue(e){
+        emits('valueChange', e.target.value)
+    }
 </script>
 
 
@@ -29,6 +34,7 @@
         display: flex;
         flex-direction: column;
         font-weight: bold;
+        margin: 1rem;
     }
 
     .label-text{

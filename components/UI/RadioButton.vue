@@ -21,7 +21,7 @@ const emits = defineEmits(["radioChange"]);
 const isChecked = useState("isChecked", () => props.isChecked);
 
 function changeCeck(): void {
-  emits("radioChange", isChecked.value);
+emits("radioChange", props.value);
 }
 </script>
 
@@ -33,6 +33,8 @@ function changeCeck(): void {
   border: 0.1rem solid $input-outline;
   border-radius: 1rem;
   padding: 1.5rem 1rem;
+  width: 100%;
+  margin: 1rem;
 }
 
 .active {
