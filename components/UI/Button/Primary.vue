@@ -27,7 +27,7 @@ button {
     font-size: 1.3rem;
     letter-spacing: .1rem;
     color: $white;
-    padding: 1rem 2rem;
+    padding: 1.7rem 2rem;
 
     &:hover{
         background-color: $secondary;
