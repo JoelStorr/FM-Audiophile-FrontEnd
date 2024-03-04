@@ -9,7 +9,7 @@
                 <slot name="error"></slot>
             </span>
         </span>
-        <input type="text" placeholder="Demo Text" @input="changeValue">
+        <input type="text" :placeholder="props.placeHolder" @input="changeValue">
     </label>
 
 </template>
@@ -17,6 +17,7 @@
 <script lang="ts" setup>
     const props = defineProps({
         error: {type: Boolean, required: true},
+        placeHolder: {type: String, required: true}
     })
 
     const emits = defineEmits('valueChange')
