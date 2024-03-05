@@ -3,13 +3,30 @@
     <h2>Headphones</h2>
   </div>
   <section class="products">
-    <ProductPrev :imgLeft="true" />
-    <ProductPrev :imgLeft="false" />
-    <ProductPrev :imgLeft="true" />
+    <ProductPrev 
+      v-for="(item, index) in categoryProducts" 
+      key="item.id" 
+      :imgLeft="index % 2 == 0 ? true : false" 
+      :product="item"
+    />
   </section>
   <CategoryList />
   <AudioText />
 </template>
+
+<script setup>
+  import {useMainStore} from '~/store/index';
+
+  const store = useMainStore();
+  const {getCategoryProducts} = store;
+
+  let categoryProducts = computed(()=> {
+    console.log('computed');
+    return getCategoryProducts('headphones')
+  });
+
+</script>
+
 
 <style lang="scss" scoped>
 .header {

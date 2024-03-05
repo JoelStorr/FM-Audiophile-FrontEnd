@@ -3,9 +3,13 @@
     <h2>Earphones</h2>
   </div>
   <section class="products">
-    <ProductPrev v-for="item in categoryProducts" key="item.id" :imgLeft="item.id % 2 == 0 ? true : false" />
-    <p v-for="item in categoryProducts" key="item.id">{{ item.id }}</p>
-    {{ categoryProducts }}
+    <ProductPrev 
+      v-for="(item, index) in categoryProducts" 
+      key="item.id" 
+      :imgLeft="index % 2 == 0 ? true : false" 
+      :product="item"
+    />
+
   </section>
   <CategoryList />
   <AudioText />
@@ -14,17 +18,13 @@
 <script setup>
   import {useMainStore} from '~/store/index';
 
-
   const store = useMainStore();
   const {getCategoryProducts} = store;
 
   let categoryProducts = computed(()=> {
     console.log('computed');
-    return getCategoryProducts('headphones')
+    return getCategoryProducts('earphones')
   });
-
-  console.log('Ran Hearphones')
-
 
 </script>
 
