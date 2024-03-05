@@ -4,8 +4,9 @@
 
 <style lang="scss" scoped>
 .back-btn {
-  display: block;
+  display: inline-block;
   font-size: 1.5rem;
   padding-bottom: 4rem;
+  cursor: pointer;
 }
 </style>
