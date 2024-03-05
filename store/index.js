@@ -13,6 +13,7 @@ export const useMainStore = defineStore('main', {
                 .then((json) => {
                     this.products = json
                     console.log(this.products)
+                    return true
                 })
         },
         getProduct(id){
