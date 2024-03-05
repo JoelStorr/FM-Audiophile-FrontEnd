@@ -18,8 +18,8 @@
           </p>
           <h6>$ {{ productData["price"] }}</h6>
           <div class="add-cart-btn">
-            <UICounter />
-            <UIButtonPrimary>Add to cart</UIButtonPrimary>
+            <UICounter @onNumberChange="numberChange" />
+            <UIButtonPrimary @on-click="addtoCart">Add to cart</UIButtonPrimary>
           </div>
         </div>
       </section>
@@ -77,7 +77,7 @@ definePageMeta({
       console.log(store.products.length);
 
       console.log("Ran local middleware");
-      console.log(val);
+      console.log('Value', val);
       console.log(store.products);
       return val;
     },
@@ -87,9 +87,9 @@ definePageMeta({
 const route = useRoute();
 
 const store = useMainStore();
-const { getProduct, loadProducst } = store;
+const { getProduct, loadProducst, addToCart} = store;
 
-console.log("Producst Length:", storeToRefs.products);
+let count = useState('count', ()=> 1)
 
 let loading = useState("loading", () => {
   return false;
@@ -103,9 +103,22 @@ const productData = computed(() => {
   return prod;
 });
 
-console.log("Route", route.params);
 
-console.log(productData.value);
+if(productData.value){
+  true
+}
+
+
+
+
+function numberChange(value){
+  count.value = value;
+}
+
+
+function addtoCart(){
+  addToCart(route.params.id, count.value)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,15 +1,35 @@
 <template>
   <div>
-    <button @click="number--">-</button>
+    <button @click="sub">-</button>
     <p>
       {{ number }}
     </p>
-    <button @click="number++">+</button>
+    <button @click="add">+</button>
   </div>
 </template>
 
 <script lang="ts" setup>
-let number = useState("counter-number", () => 1);
+
+  const emits = defineEmits(['onNumberChange'])
+
+  let number = useState("counter-number", () => 1);
+
+  function add(){
+
+    number.value += 1
+
+    emits('onNumberChange', number.value)
+
+  }
+
+  function sub(){
+    if(number.value > 0){
+      number.value -= 1 
+      emits('onNumberChange', number.value)
+    }
+  }
+
+
 </script>
 
 <style lang="scss" scoped>
