@@ -77,7 +77,7 @@ definePageMeta({
       console.log(store.products.length);
 
       console.log("Ran local middleware");
-      console.log('Value', val);
+      console.log("Value", val);
       console.log(store.products);
       return val;
     },
@@ -87,9 +87,9 @@ definePageMeta({
 const route = useRoute();
 
 const store = useMainStore();
-const { getProduct, loadProducst, addToCart} = store;
+const { getProduct, loadProducst, addToCart } = store;
 
-let count = useState('count', ()=> 1)
+let count = useState("count", () => 1);
 
 let loading = useState("loading", () => {
   return false;
@@ -103,21 +103,16 @@ const productData = computed(() => {
   return prod;
 });
 
-
-if(productData.value){
-  true
+if (productData.value) {
+  true;
 }
 
-
-
-
-function numberChange(value){
+function numberChange(value) {
   count.value = value;
 }
 
-
-function addtoCart(){
-  addToCart(route.params.id, count.value)
+function addtoCart() {
+  addToCart(route.params.id, count.value, productData.value["price"]);
 }
 </script>
 

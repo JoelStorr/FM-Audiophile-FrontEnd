@@ -22,13 +22,13 @@ export const useMainStore = defineStore('main', {
             return product;
         },
 
-        addToCart(slug, count){
+        addToCart(slug, count, price){
             let product = this.cart.find(val => val.slug == slug);
             if(product != null){
                 product.count += count
                 return
             } else{
-                this.cart.push({slug: slug, count: count})
+                this.cart.push({slug: slug, count: count, price: price})
             }
 
             console.log(this.cart)
