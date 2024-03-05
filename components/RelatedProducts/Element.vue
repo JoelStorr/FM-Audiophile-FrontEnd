@@ -1,15 +1,28 @@
+import type { NuxtLink } from "#build/components";
+
 <template>
 
     <div class="content-holder">
 
        
-            <img class="product-image" src="/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg" />
+            <img class="product-image" :src="props.item['image']['desktop']" />
       
-        <h3>XX99 Mark |</h3>
-        <UIButtonPrimary>See Product</UIButtonPrimary>
+        <h3>{{ props.item['name'] }}</h3>
+        <NuxtLink :to="`/product/${props.item['slug']}`">
+            <UIButtonPrimary>See Product</UIButtonPrimary>
+        </NuxtLink>
     </div>
 
 </template>
+
+<script setup>
+
+const props = defineProps({
+    item: Object
+});
+
+</script>
+
 
 <style lang="scss" scoped>
 

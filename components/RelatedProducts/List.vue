@@ -1,15 +1,14 @@
 <template>
     <div class="related-product-lits">
-        <RelatedProductsElement />
-        <RelatedProductsElement />
-        <RelatedProductsElement />
+        <RelatedProductsElement v-for="item in props.list" :key="item['slug']" :item="item"/>
+     
 
     </div>
 </template>
 <script setup>
 
     let props = defineProps({
-        recomndList: Object
+        list: Array
     })
 
 
