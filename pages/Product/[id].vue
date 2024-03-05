@@ -3,19 +3,18 @@
   <div class="product-content-holder">
     <UIButtonBack />
 
-    <section class="main-product-section">
+    <div v-if="loading">
+      <section class="main-product-section">
       <div class="image-holder">
-        <img src="/product-yx1-earphones/desktop/image-product.jpg" />
+        <img :src="productData['image']['desktop']" />
       </div>
       <div class="product-content">
-        <p class="g-overline higlight">New Product</p>
-        <h2>XX99 Mark || Headphones</h2>
+        <p class="g-overline higlight" v-if="productData['new']">New Product</p>
+        <h2>{{ productData['name'] }}</h2>
         <p>
-          The new XX99 Mark II headphones is the pinnacle of pristine audio. It
-          redefines your premium headphone experience by reproducing the
-          balanced depth and precision of studio-quality sound.
+          {{ productData['description'] }}
         </p>
-        <h6>$ 2,999</h6>
+        <h6>$ {{ productData['price'] }}</h6>
         <div class="add-cart-btn">
           <UICounter />
           <UIButtonPrimary>Add to cart</UIButtonPrimary>
@@ -27,25 +26,11 @@
       <div class="feature-text">
         <h3>Features</h3>
         <p>
-          Featuring a genuine leather head strap and premium earcups, these
-          headphones deliver superior comfort for those who like to enjoy
-          endless listening. It includes intuitive controls designed for any
-          situation. Whether you’re taking a business call or just in your own
-          personal space, the auto on/off and pause features ensure that you’ll
-          never miss a beat.
-          <br />
-          <br />
-          The advanced Active Noise Cancellation with built-in equalizer allow
-          you to experience your audio world on your terms. It lets you enjoy
-          your audio in peace, but quickly interact with your surroundings when
-          you need to. Combined with Bluetooth 5. 0 compliant connectivity and
-          17 hour battery life, the XX99 Mark II headphones gives you superior
-          sound, cutting-edge technology, and a modern design aesthetic.
+          {{ productData['features'] }}
         </p>
       </div>
 
-    
-
+     
       <div class="in-the-box">
         <h4>In the Box</h4>
         <ul>
@@ -87,9 +72,64 @@
 </div>
 <CategoryList />
 <AudioText />
+    </div>
+
+    
+
 </template>
 
-<script setup></script>
+<script setup>
+import {useMainStore} from '~/store/index'
+
+
+
+definePageMeta({
+  
+  middleware: [
+    async function(to,from){
+      const store = useMainStore();
+      let val = await store.loadProducst().then((res)=> {return res});
+      
+      console.log(store.products.length)
+
+      console.log('Ran local middleware')
+      console.log(val)
+      console.log(store.products)
+      return val
+    }
+  ]
+});
+
+
+
+const route = useRoute()
+
+const store = useMainStore();
+const {getProduct, loadProducst} = store
+
+console.log('Producst Length:', storeToRefs.products)
+
+
+let loading = useState('loading', ()=>{return false})
+
+
+const productData = computed(()=> {
+  
+ let prod = getProduct(route.params.id)
+  if(prod){
+    loading.value = true
+  }
+  return prod
+})
+
+
+
+console.log(productData.value);
+
+
+
+
+</script>
 
 <style lang="scss" scoped>
 .header {
