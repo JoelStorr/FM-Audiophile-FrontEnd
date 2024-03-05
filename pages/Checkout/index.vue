@@ -127,12 +127,12 @@
           <h6 class="highlight">$ 5,396</h6>
         </div>
         <div class="btn-holder">
-          <UIButtonPrimary :fullLength="true">Continue & Pay</UIButtonPrimary>
+          <UIButtonPrimary :fullLength="true" @on-click="showPopUp">Continue & Pay</UIButtonPrimary>
         </div>
       </div>
     </div>
 </div>
-<CheckoutPopUp />
+<CheckoutPopUp v-if="popUp" />
 </template>
 
 <script setup>
@@ -146,6 +146,8 @@ const country = useState("country", () => "");
 const paymentMethod = useState("paymentMethod", () => "e-Money");
 const eMoneyNumber = useState("eMoneyNumber", () => "");
 const eMoneyPin = useState("eMoneyPin", () => "");
+
+const popUp = useState('popUp', ()=> false);
 
 function nameChange(val) {
   name.value = val;
@@ -187,6 +189,13 @@ function eMoneyNumberChange(val) {
 function eMoneyPinChange(val) {
   eMoneyPin.value = val;
 }
+
+
+function showPopUp(){
+  popUp.value = true;
+}
+
+
 </script>
 
 <style lang="scss" scoped>
