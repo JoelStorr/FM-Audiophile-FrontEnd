@@ -16,8 +16,8 @@ export const useMainStore = defineStore('main', {
                     return true
                 })
         },
-        getProduct(id){
-            let product =  this.products.find(val => val.id == id);
+        getProduct(slug){
+            let product =  this.products.find(val => val.slug == slug);
             
             return product;
         },

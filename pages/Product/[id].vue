@@ -34,20 +34,8 @@
       <div class="in-the-box">
         <h4>In the Box</h4>
         <ul>
-            <li>
-                <span>1x</span> Headphone Unit
-            </li>
-            <li>
-                <span>2x</span> Replacement Earcups
-            </li>
-            <li>
-                <span>1x</span> User Manual
-            </li>
-            <li>
-                <span>1x</span> 3.5mm 5m Audio Cabel
-            </li>
-            <li>
-                <span>1x</span> Travel Bag
+            <li v-for="(item, index) in productData['includes']" :key="index">
+                <span>{{ item['quantity'] }}x</span> {{ item['item'] }}
             </li>
         </ul>
       </div>
@@ -55,11 +43,11 @@
 
     <section class="image-grid">
         <div class="image-grid-column">
-            <img src="/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg" />
-            <img src="/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg" />
+            <img :src="productData['gallery']['first']['desktop']" />
+            <img :src="productData['gallery']['second']['desktop']" />
         </div>
         <div class="image-grid-column-full">
-            <img src="/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg" />
+            <img :src="productData['gallery']['third']['desktop']" />
         </div>
     </section>
 
@@ -122,7 +110,7 @@ const productData = computed(()=> {
   return prod
 })
 
-
+console.log('Route',route.params)
 
 console.log(productData.value);
 

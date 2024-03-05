@@ -6,7 +6,14 @@
 
     </div>
 </template>
+<script setup>
 
+    let props = defineProps({
+        recomndList: Object
+    })
+
+
+</script>
 
 <style lang="scss" scoped>
 

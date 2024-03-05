@@ -138,7 +138,7 @@
       "third": {
         "mobile": "/product-xx59-headphones/mobile/image-gallery-3.jpg",
         "tablet": "/product-xx59-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "product-xx59-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "/product-xx59-headphones/desktop/image-gallery-3.jpg"
       }
     },
     "others": [

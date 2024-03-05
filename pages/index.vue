@@ -10,7 +10,7 @@
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <NuxtLink to="/Product/4">
+      <NuxtLink to="/Product/xx99-mark-two-headphones">
 
         <UIButtonPrimary class="btn-primary">See Product</UIButtonPrimary>
       </NuxtLink>

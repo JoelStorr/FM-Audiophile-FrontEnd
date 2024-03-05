@@ -15,7 +15,7 @@
           remarkable sound.
         </p>
         <div>
-          <NuxtLink to="/Product/6">
+          <NuxtLink to="/Product/zx9-speaker">
             <UIButtonPrimaryDark>See Product</UIButtonPrimaryDark>
           </NuxtLink>
           <div class="btn-spacer"></div>
@@ -24,7 +24,7 @@
     </div>
     <div class="speaker-product">
       <h2>ZX7 Speaker</h2>
-      <NuxtLink to="/Product/5">
+      <NuxtLink to="/Product/zx7-speaker">
         <UIButtonSecondary></UIButtonSecondary>
       </NuxtLink>
     </div>
@@ -33,7 +33,7 @@
       <img src="/home/desktop/image-earphones-yx1.jpg" />
       <div class="">
         <h3>YX1 Earphones</h3>
-        <NuxtLink to="/Product/1">
+        <NuxtLink to="/Product/yx1-earphones">
           <UIButtonSecondary></UIButtonSecondary>
         </NuxtLink>
       </div>

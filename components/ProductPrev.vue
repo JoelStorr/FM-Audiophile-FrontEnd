@@ -8,7 +8,7 @@
             <p class="g-subtitle" v-if="props.product['new']">New Product</p>
             <h2>{{ props.product['name'] }}</h2>
             <p>{{ props.product['description'] }}</p>
-            <NuxtLink :to="`/product/${props.product['id']}`">
+            <NuxtLink :to="`/product/${props.product['slug']}`">
                 <UIButtonPrimary>See Product</UIButtonPrimary>
             </NuxtLink>
         </div>
@@ -19,7 +19,7 @@
             <p class="g-subtitle" v-if="props.product['new']">New Product</p>
             <h2>{{ props.product['name'] }}</h2>
             <p class="description">{{ props.product['description'] }}</p>
-            <NuxtLink :to="`/product/${props.product['id']}`">
+            <NuxtLink :to="`/product/${props.product['slug']}`">
                 <UIButtonPrimary>See Product</UIButtonPrimary>
             </NuxtLink>
         </div>
