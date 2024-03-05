@@ -15,21 +15,27 @@
           remarkable sound.
         </p>
         <div>
-          <UIButtonPrimaryDark>See Product</UIButtonPrimaryDark>
+          <NuxtLink to="/Product/6">
+            <UIButtonPrimaryDark>See Product</UIButtonPrimaryDark>
+          </NuxtLink>
           <div class="btn-spacer"></div>
         </div>
       </div>
     </div>
     <div class="speaker-product">
       <h2>ZX7 Speaker</h2>
-      <UIButtonSecondary></UIButtonSecondary>
+      <NuxtLink to="/Product/5">
+        <UIButtonSecondary></UIButtonSecondary>
+      </NuxtLink>
     </div>
   
     <div class="headphones-product">
       <img src="/home/desktop/image-earphones-yx1.jpg" />
       <div class="">
         <h3>YX1 Earphones</h3>
-        <UIButtonSecondary></UIButtonSecondary>
+        <NuxtLink to="/Product/1">
+          <UIButtonSecondary></UIButtonSecondary>
+        </NuxtLink>
       </div>
     </div>
   </section>

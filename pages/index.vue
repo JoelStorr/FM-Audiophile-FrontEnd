@@ -10,14 +10,16 @@
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <UIButtonPrimary class="btn-primary">See Product</UIButtonPrimary>
+      <NuxtLink to="/Product/4">
+
+        <UIButtonPrimary class="btn-primary">See Product</UIButtonPrimary>
+      </NuxtLink>
     </div>
     <div class="hero-spacer">
       <img src="/home/desktop/headphones-hero.png" />
     </div>
   </section>
   <CategoryList />
-
   <HomeSpeakerGrid />
   <AudioText />
 </template>
