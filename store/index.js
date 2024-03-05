@@ -7,20 +7,17 @@ export const useMainStore = defineStore('main', {
     }),
 
     actions: {
-        loadProducst() {
-            fetch('/data.json')
-            .then((res)=>res.json())
-            .then((json) => {
-                this.products = json
-                console.log(this.products);
-                this.getProduct(3)
-            })
-
-            
+        async loadProducst() { 
+                fetch('/data.json')
+                .then((res)=>res.json())
+                .then((json) => {
+                    this.products = json
+                    console.log(this.products)
+                })
         },
         getProduct(id){
             let product =  this.products.find(val => val.id == id);
-            console.log(product)
+            
             return product;
         },
 
@@ -30,6 +27,13 @@ export const useMainStore = defineStore('main', {
                 
             }
 
+        },
+
+        getCategoryProducts(category){
+            console.log('Ran Category')
+            let getproducts = this.products.filter(val => val.category == category );
+            console.log(getproducts);
+            return getproducts
         }
     }
 })
