@@ -2,7 +2,7 @@
     <div class="container">
         <div class="header">
             <h6>Cart (3)</h6>
-            <a>Remove all</a>
+            <a @click="deleteCart">Remove all</a>
         </div>
         <div class="total">
             <p>Total</p>
@@ -15,6 +15,13 @@
 </template>
 
 <script setup>
+
+    import {useMainStore} from '~/store/index'
+
+
+    const store = useMainStore();
+    const {deleteCart} = store
+
 
     let emit = defineEmits(['hideCard'])
 

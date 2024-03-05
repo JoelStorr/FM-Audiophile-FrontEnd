@@ -30,9 +30,10 @@ export const useMainStore = defineStore('main', {
             } else{
                 this.cart.push({slug: slug, count: count, price: price})
             }
+        },
 
-            console.log(this.cart)
-
+        deleteCart(){
+            this.cart = [];
         },
 
         getCategoryProducts(category){
