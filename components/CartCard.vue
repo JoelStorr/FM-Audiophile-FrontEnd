@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <h6>Cart ({{ cart.length }})</h6>
-      <a @click="deleteCart">Remove all</a>
+      <a class="remove-all" @click="deleteCart">Remove all</a>
     </div>
     <div class="product-list">
       <CartItem v-for="(item, index) in cart" :key="index" :item="item" />
@@ -79,5 +79,11 @@ a {
   & :first-child {
     width: 100%;
   }
+}
+
+
+.remove-all:hover{
+  color: $primary;
+  cursor: pointer;
 }
 </style>

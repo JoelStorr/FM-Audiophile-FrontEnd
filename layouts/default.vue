@@ -42,9 +42,9 @@
           <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>
         </nav>
         <div>
-          <img src="/shared/desktop/icon-facebook.svg" />
-          <img src="/shared/desktop/icon-twitter.svg" />
-          <img src="/shared/desktop/icon-instagram.svg" />
+          <img class="social-icon"src="/shared/desktop/icon-facebook.svg" />
+          <img class="social-icon"src="/shared/desktop/icon-twitter.svg" />
+          <img class="social-icon"src="/shared/desktop/icon-instagram.svg" />
         </div>
       </div>
     </footer>
@@ -83,12 +83,20 @@ header {
   font-size: 1.3rem;
   margin: 0 2rem;
   text-decoration: none;
-  color: $white;
+  
+
+  &:visited{
+    color: $white;
+  }
+
 }
 
-.nav-link:visited {
-  color: $white;
+.nav-link:hover {
+ color: $primary;
 }
+
+
+
 
 .cart-btn {
   background-color: rgba(0, 0, 0, 0);
@@ -151,4 +159,10 @@ footer {
   height: 0.4rem;
   background-color: $primary;
 }
+
+
+.social-icon:hover{
+  filter: brightness(0) saturate(100%) invert(54%) sepia(47%) saturate(577%) hue-rotate(337deg) brightness(94%) contrast(93%);
+}
+
 </style>

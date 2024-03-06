@@ -16,10 +16,11 @@ button {
   font-size: 1.3rem;
   letter-spacing: 0.1rem;
   color: $white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
 
   &:hover {
-    background-color: $secondary;
+    background-color: #4C4C4C;
+    cursor: pointer;
   }
 }
 </style>

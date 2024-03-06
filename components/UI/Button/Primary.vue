@@ -27,6 +27,7 @@ button {
 
   &:hover {
     background-color: $secondary;
+    cursor: pointer;
   }
 }
 

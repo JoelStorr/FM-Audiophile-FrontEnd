@@ -20,6 +20,7 @@ button {
   &:hover {
     background-color: $black;
     color: $white;
+    cursor: pointer;
   }
 }
 </style>
