@@ -85,4 +85,39 @@ h1 {
 .speaker-hero-holder {
   padding: 0 10%;
 }
+
+
+@media screen and (max-width: $tablet) {
+  .hero-section{
+    top: -8rem;
+    background-color: rgba($color: #000000, $alpha: 1);
+    height: auto;    
+    padding-top:0 ;
+    padding-bottom: 0;
+
+    & img{
+      position: relative;
+      
+      width: 100%;
+      height: auto;
+      z-index: 1;
+    }
+  }
+
+  .hero-info{
+    position: absolute;
+    width: 40%;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    z-index: 2;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    
+    padding-top: 0;
+  }
+
+}
+
+
+
 </style>
