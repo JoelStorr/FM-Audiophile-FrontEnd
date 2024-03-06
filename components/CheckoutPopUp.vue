@@ -11,21 +11,21 @@
                         <img src="/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg">
                         <div class="name-holder">
                             <div class="name">
-                                <h6>XX99 MK ||</h6>
+                                <h6>{{ props.name }}</h6>
                                 <h6>x1</h6>
                             </div>
-                            <p>$2,999</p>
+                            <p>${{ props.price }}</p>
                         </div>
                         
                     </div>
-                    <hr />
+                    <hr v-if="count > 1" />
                     <div class="more-holder">
-                        <p class="more-items">and 2 other item(s)</p>
+                        <p v-if="cartCount > 1" class="more-items">and {{ cartCount - 1  }} other item(s)</p>
                     </div>
                 </div>
                 <div class="grand-total">
                     <p class="g-subtitle">Grand Total</p>
-                    <h6>$5,446</h6>
+                    <h6>${{ props.total }}</h6>
                 </div>
             </div>
             <NuxtLink to="/">
@@ -38,7 +38,14 @@
 
 </template>
 
-<script>
+<script setup>
+    let props = defineProps({
+        name: String,
+        amount: Number,
+        price: Number,
+        cartCount: Number,
+        total: Number
+    });
 
 </script>
 

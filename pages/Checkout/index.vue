@@ -106,25 +106,24 @@
       </div>
       <div class="summary-holder">
         <h4>Summary</h4>
-        <UIProductSummary />
-        <UIProductSummary />
-        <UIProductSummary />
+        <UIProductSummary v-for="(item,index) in cart" :key="index" :item="item"/>
+        
 
         <div class="row">
           <p>TOTAL</p>
-          <h6>$ 5,396</h6>
+          <h6>$ {{total}}</h6>
         </div>
         <div class="row">
           <p>SHIPPING</p>
-          <h6>$ 5,396</h6>
+          <h6>$ 50</h6>
         </div>
         <div class="row">
           <p>VAT (INCLUDED)</p>
-          <h6>$ 5,396</h6>
+          <h6>$ {{ tax }}</h6>
         </div>
         <div class="row">
           <p>GRAND TOTAL</p>
-          <h6 class="highlight">$ 5,396</h6>
+          <h6 class="highlight">$ {{ total + tax }}</h6>
         </div>
         <div class="btn-holder">
           <UIButtonPrimary :fullLength="true" @on-click="showPopUp">Continue & Pay</UIButtonPrimary>
@@ -132,10 +131,41 @@
       </div>
     </div>
 </div>
-<CheckoutPopUp v-if="popUp" />
+<CheckoutPopUp 
+  v-if="popUp" 
+  :name="cart[0]['name']" 
+  :amount="cart[0]['count']" 
+  :price="cart[0]['price']" 
+  :cartCount="count" 
+  :total="total + tax"
+  
+/>
 </template>
 
 <script setup>
+    import {useMainStore} from '~/store/index'
+    const store = useMainStore();
+    const {deleteCart, getCartTotal} = store
+
+
+   let cart = computed(()=>{
+      console.log(store.cart[0])
+        return store.cart
+    });
+
+    let count = computed(()=>{
+      return store.cart.length
+    })
+
+    let total = computed(()=>{
+        return store.cartTotal;
+    });
+
+    let tax = computed(()=>{
+      return Math.floor(total.value * 0.19)
+    })
+
+
 const name = useState("name", () => "");
 const email = useState("email", () => "");
 const phone = useState("phone", () => "");

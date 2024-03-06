@@ -1,17 +1,21 @@
 <template>
 
     <div class="content-holder">
-        <img src="/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" />
+        <img :src="props.item['image']" />
         <div class="name-holder">
-            <p>XX99 MK ||</p>
-            <p>$2.999</p>
+            <p>{{props.item['name'].slice(0, 12)}}...</p>
+            <p>$ {{props.item['price']}}</p>
         </div>
-        <p class="count">x1</p>
+        <p class="count">x{{ props.item['count'] }}</p>
     </div>
 
 
 </template>
+<script setup>
+    let props = defineProps({item: Object});
 
+
+</script>
 
 <style lang="scss" scoped>
 
