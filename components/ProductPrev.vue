@@ -60,4 +60,22 @@ img {
 .description {
   padding-right: 6rem;
 }
+
+@media screen and (max-width: $tablet) {
+  
+  .product-prev{
+    display: flex;
+    flex-direction: column;
+  }
+  .image-holder{
+    width: 100%;
+  }
+
+  .content-holder{
+    text-align: center;
+    padding: 1rem 10rem;
+  }
+
+}
+
 </style>
