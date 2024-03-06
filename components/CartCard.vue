@@ -1,12 +1,19 @@
 <template>
     <div class="container">
         <div class="header">
-            <h6>Cart (3)</h6>
+            <h6>Cart ({{ cart.length }})</h6>
             <a @click="deleteCart">Remove all</a>
+        </div>
+        <div class="product-list">
+            <CartItem 
+                v-for="(item, index) in cart" 
+                :key="index"  
+                :item="item"
+            /> 
         </div>
         <div class="total">
             <p>Total</p>
-            <h6>$5,396</h6>
+            <h6>$ {{ total }}</h6>
         </div>
         <NuxtLink class="nuxt-link" to="/checkout">
             <UIButtonPrimary @on-click="hider">Checkout</UIButtonPrimary>
@@ -20,7 +27,7 @@
 
 
     const store = useMainStore();
-    const {deleteCart} = store
+    const {deleteCart, getCartTotal} = store
 
 
     let emit = defineEmits(['hideCard'])
@@ -31,13 +38,25 @@
     }
 
 
+    let cart = computed(()=>{
+        return store.cart
+    });
+
+
+    let total = computed(()=>{
+        return store.cartTotal;
+    });
+
+
+    
+
 </script>
 
 
 <style lang="scss" scoped>
     .container{
         background-color: $white;
-        width: 25vw;
+        width: 35vw;
         border-radius: 2.5rem;
         padding:0 2rem 2rem 2rem;
         display: flex;
@@ -65,9 +84,16 @@
         justify-content: space-between;
     }
 
+    .product-list{
+        position: relative;
+        width: 100%;
+    }
+    
+
+    
+
     .nuxt-link{
         width: 100%;
-
         & :first-child{
             width: 100%;
         }

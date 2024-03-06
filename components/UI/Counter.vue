@@ -24,14 +24,14 @@
 
     emits('onNumberChange', number.value)
 
-  }
+  };
 
   function sub(){
     if(number.value > 0){
       number.value -= 1 
       emits('onNumberChange', number.value)
     }
-  }
+  };
 
 
 </script>
