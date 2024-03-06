@@ -21,7 +21,7 @@ const emits = defineEmits(["radioChange"]);
 const isChecked = useState("isChecked", () => props.isChecked);
 
 function changeCeck(): void {
-emits("radioChange", props.value);
+  emits("radioChange", props.value);
 }
 </script>
 

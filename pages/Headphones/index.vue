@@ -3,10 +3,10 @@
     <h2>Headphones</h2>
   </div>
   <section class="products">
-    <ProductPrev 
-      v-for="(item, index) in categoryProducts" 
-      key="item.id" 
-      :imgLeft="index % 2 == 0 ? true : false" 
+    <ProductPrev
+      v-for="(item, index) in categoryProducts"
+      key="item.id"
+      :imgLeft="index % 2 == 0 ? true : false"
       :product="item"
     />
   </section>
@@ -15,18 +15,16 @@
 </template>
 
 <script setup>
-  import {useMainStore} from '~/store/index';
+import { useMainStore } from "~/store/index";
 
-  const store = useMainStore();
-  const {getCategoryProducts} = store;
+const store = useMainStore();
+const { getCategoryProducts } = store;
 
-  let categoryProducts = computed(()=> {
-    console.log('computed');
-    return getCategoryProducts('headphones')
-  });
-
+let categoryProducts = computed(() => {
+  console.log("computed");
+  return getCategoryProducts("headphones");
+});
 </script>
-
 
 <style lang="scss" scoped>
 .header {

@@ -106,12 +106,15 @@
       </div>
       <div class="summary-holder">
         <h4>Summary</h4>
-        <UIProductSummary v-for="(item,index) in cart" :key="index" :item="item"/>
-        
+        <UIProductSummary
+          v-for="(item, index) in cart"
+          :key="index"
+          :item="item"
+        />
 
         <div class="row">
           <p>TOTAL</p>
-          <h6>$ {{total}}</h6>
+          <h6>$ {{ total }}</h6>
         </div>
         <div class="row">
           <p>SHIPPING</p>
@@ -126,45 +129,44 @@
           <h6 class="highlight">$ {{ total + tax }}</h6>
         </div>
         <div class="btn-holder">
-          <UIButtonPrimary :fullLength="true" @on-click="showPopUp">Continue & Pay</UIButtonPrimary>
+          <UIButtonPrimary :fullLength="true" @on-click="showPopUp"
+            >Continue & Pay</UIButtonPrimary
+          >
         </div>
       </div>
     </div>
-</div>
-<CheckoutPopUp 
-  v-if="popUp" 
-  :name="cart[0]['name']" 
-  :amount="cart[0]['count']" 
-  :price="cart[0]['price']" 
-  :cartCount="count" 
-  :total="total + tax"
-  
-/>
+  </div>
+  <CheckoutPopUp
+    v-if="popUp"
+    :name="cart[0]['name']"
+    :amount="cart[0]['count']"
+    :price="cart[0]['price']"
+    :cartCount="count"
+    :total="total + tax"
+  />
 </template>
 
 <script setup>
-    import {useMainStore} from '~/store/index'
-    const store = useMainStore();
-    const {deleteCart, getCartTotal} = store
+import { useMainStore } from "~/store/index";
+const store = useMainStore();
+const { deleteCart, getCartTotal } = store;
 
+let cart = computed(() => {
+  console.log(store.cart[0]);
+  return store.cart;
+});
 
-   let cart = computed(()=>{
-      console.log(store.cart[0])
-        return store.cart
-    });
+let count = computed(() => {
+  return store.cart.length;
+});
 
-    let count = computed(()=>{
-      return store.cart.length
-    })
+let total = computed(() => {
+  return store.cartTotal;
+});
 
-    let total = computed(()=>{
-        return store.cartTotal;
-    });
-
-    let tax = computed(()=>{
-      return Math.floor(total.value * 0.19)
-    })
-
+let tax = computed(() => {
+  return Math.floor(total.value * 0.19);
+});
 
 const name = useState("name", () => "");
 const email = useState("email", () => "");
@@ -177,7 +179,7 @@ const paymentMethod = useState("paymentMethod", () => "e-Money");
 const eMoneyNumber = useState("eMoneyNumber", () => "");
 const eMoneyPin = useState("eMoneyPin", () => "");
 
-const popUp = useState('popUp', ()=> false);
+const popUp = useState("popUp", () => false);
 
 function nameChange(val) {
   name.value = val;
@@ -220,12 +222,9 @@ function eMoneyPinChange(val) {
   eMoneyPin.value = val;
 }
 
-
-function showPopUp(){
+function showPopUp() {
   popUp.value = true;
 }
-
-
 </script>
 
 <style lang="scss" scoped>

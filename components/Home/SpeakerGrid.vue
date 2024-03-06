@@ -11,8 +11,8 @@
           Speaker
         </h1>
         <p>
-          Upgrade to premium speakers that are phenomenally built to deliver truly
-          remarkable sound.
+          Upgrade to premium speakers that are phenomenally built to deliver
+          truly remarkable sound.
         </p>
         <div>
           <NuxtLink to="/Product/zx9-speaker">
@@ -28,7 +28,7 @@
         <UIButtonSecondary></UIButtonSecondary>
       </NuxtLink>
     </div>
-  
+
     <div class="headphones-product">
       <img src="/home/desktop/image-earphones-yx1.jpg" />
       <div class="">
@@ -44,11 +44,9 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-
-.speaker-grid{
+.speaker-grid {
   padding: 2rem 10% 2rem 10%;
 }
-
 
 .speaker-hero {
   position: relative;
@@ -58,10 +56,7 @@
   display: flex;
   overflow: hidden;
   border-radius: 1rem;
-
 }
-
-
 
 .img-holder {
   position: relative;

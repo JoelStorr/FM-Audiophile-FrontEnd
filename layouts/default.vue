@@ -14,7 +14,6 @@
         <button class="cart-btn" @click="switchCard">
           <img src="/shared/desktop/icon-cart.svg" alt="Cart" />
         </button>
-        
       </div>
       <hr />
     </header>

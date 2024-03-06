@@ -1,71 +1,75 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useMainStore = defineStore('main', {
-    state: ()=>({
-        products:[],
-        cart:[],
-        cartTotal: 0,
-    }),
+export const useMainStore = defineStore("main", {
+  state: () => ({
+    products: [],
+    cart: [],
+    cartTotal: 0,
+  }),
 
-    actions: {
-        async loadProducst() { 
-                fetch('/data.json')
-                .then((res)=>res.json())
-                .then((json) => {
-                    this.products = json
-                    console.log(this.products)
-                    return true
-                })
-        },
-        getProduct(slug){
-            let product =  this.products.find(val => val.slug == slug);
-            
-            return product;
-        },
+  actions: {
+    async loadProducst() {
+      fetch("/data.json")
+        .then((res) => res.json())
+        .then((json) => {
+          this.products = json;
+          console.log(this.products);
+          return true;
+        });
+    },
+    getProduct(slug) {
+      let product = this.products.find((val) => val.slug == slug);
 
-        addToCart(slug, count, price, name, image){
-            let product = this.cart.find(val => val.slug == slug);
-            if(product != null){
-                product.count += count
-                return
-            } else{
-                this.cart.push({slug: slug, count: count, price: price, name: name, image: image})
-            }
+      return product;
+    },
 
-            this.getCartTotal()
-        },
+    addToCart(slug, count, price, name, image) {
+      let product = this.cart.find((val) => val.slug == slug);
+      if (product != null) {
+        product.count += count;
+        return;
+      } else {
+        this.cart.push({
+          slug: slug,
+          count: count,
+          price: price,
+          name: name,
+          image: image,
+        });
+      }
 
-        changeProductCount(slug, count){
-            let product = this.cart.find(val => val.slug == slug);
-            if(product != null){
-                product.count += count
-                return
-            } 
-        },
+      this.getCartTotal();
+    },
 
-        getCartTotal(){
-            let totalAmount = 0;
+    changeProductCount(slug, count) {
+      let product = this.cart.find((val) => val.slug == slug);
+      if (product != null) {
+        product.count += count;
+        return;
+      }
+    },
 
-            for (let item of this.cart) {
-              totalAmount += item["price"] * item["count"];
-            }
+    getCartTotal() {
+      let totalAmount = 0;
 
-            console.log("Totl Amount", totalAmount);
+      for (let item of this.cart) {
+        totalAmount += item["price"] * item["count"];
+      }
 
-            this.cartTotal = totalAmount;
-            
-        },
+      console.log("Totl Amount", totalAmount);
 
+      this.cartTotal = totalAmount;
+    },
 
-        deleteCart(){
-            this.cart = [];
-        },
+    deleteCart() {
+      this.cart = [];
+    },
 
-        getCategoryProducts(category){
-            console.log('Ran Category')
-            let getproducts = this.products.filter(val => val.category == category );
-            console.log(getproducts);
-            return getproducts;
-        }
-    }
-})
+    getCategoryProducts(category) {
+      console.log("Ran Category");
+      let getproducts = this.products.filter((val) => val.category == category);
+      console.log(getproducts);
+      return getproducts;
+    },
+  },
+});

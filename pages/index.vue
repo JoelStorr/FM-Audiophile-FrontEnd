@@ -11,7 +11,6 @@
         for the passionate music enthusiast.
       </p>
       <NuxtLink to="/Product/xx99-mark-two-headphones">
-
         <UIButtonPrimary class="btn-primary">See Product</UIButtonPrimary>
       </NuxtLink>
     </div>

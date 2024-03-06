@@ -18,7 +18,10 @@
           </p>
           <h6>$ {{ productData["price"] }}</h6>
           <div class="add-cart-btn">
-            <UICounter @onNumberChange="numberChange" :index="productData['name']"/>
+            <UICounter
+              @onNumberChange="numberChange"
+              :index="productData['name']"
+            />
             <UIButtonPrimary @on-click="addtoCart">Add to cart</UIButtonPrimary>
           </div>
         </div>
@@ -112,7 +115,13 @@ function numberChange(value) {
 }
 
 function addtoCart() {
-  addToCart(route.params.id, count.value, productData.value["price"], productData.value['name'], productData.value['image']['desktop']);
+  addToCart(
+    route.params.id,
+    count.value,
+    productData.value["price"],
+    productData.value["name"],
+    productData.value["image"]["desktop"]
+  );
 }
 </script>
 

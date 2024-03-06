@@ -9,31 +9,26 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  count: Number,
+  index: String,
+});
+const emits = defineEmits(["onNumberChange"]);
 
-  const props = defineProps({
-    count: Number,
-    index: String
-  })
-  const emits = defineEmits(['onNumberChange'])
+let number = useState(`counter-number-${props.index}`, () => props.count ?? 1);
 
-  let number = useState(`counter-number-${props.index}`, () => props.count ?? 1);
+function add() {
+  number.value += 1;
 
-  function add(){
+  emits("onNumberChange", number.value);
+}
 
-    number.value += 1
-
-    emits('onNumberChange', number.value)
-
-  };
-
-  function sub(){
-    if(number.value > 0){
-      number.value -= 1 
-      emits('onNumberChange', number.value)
-    }
-  };
-
-
+function sub() {
+  if (number.value > 0) {
+    number.value -= 1;
+    emits("onNumberChange", number.value);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,12 +41,11 @@ div {
   justify-content: space-between;
 }
 
-p{
+p {
   margin: 0;
   padding: 0 1.2rem;
   font-weight: bold;
 }
-
 
 button {
   background-color: rgba(0, 0, 0, 0);
