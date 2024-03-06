@@ -18,7 +18,7 @@
           </p>
           <h6>$ {{ productData["price"] }}</h6>
           <div class="add-cart-btn">
-            <UICounter @onNumberChange="numberChange" />
+            <UICounter @onNumberChange="numberChange" :index="productData['name']"/>
             <UIButtonPrimary @on-click="addtoCart">Add to cart</UIButtonPrimary>
           </div>
         </div>

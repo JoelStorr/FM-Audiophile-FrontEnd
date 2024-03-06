@@ -10,9 +10,13 @@
 
 <script lang="ts" setup>
 
+  const props = defineProps({
+    count: Number,
+    index: String
+  })
   const emits = defineEmits(['onNumberChange'])
 
-  let number = useState("counter-number", () => 1);
+  let number = useState(`counter-number-${props.index}`, () => props.count ?? 1);
 
   function add(){
 
