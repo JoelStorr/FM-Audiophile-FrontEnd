@@ -141,6 +141,7 @@
     :name="cart[0]['name']"
     :amount="cart[0]['count']"
     :price="cart[0]['price']"
+    :image="cart[0]['image']"
     :cartCount="count"
     :total="total + tax"
   />

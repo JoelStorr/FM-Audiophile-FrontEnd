@@ -9,7 +9,7 @@
         <div class="order-item-holder">
           <div class="order-item">
             <img
-              src="/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg"
+              :src="props.image"
             />
             <div class="name-holder">
               <div class="name">
@@ -45,6 +45,7 @@ let props = defineProps({
   price: Number,
   cartCount: Number,
   total: Number,
+  image: String
 });
 </script>
 
