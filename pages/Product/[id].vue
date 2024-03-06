@@ -112,7 +112,7 @@ function numberChange(value) {
 }
 
 function addtoCart() {
-  addToCart(route.params.id, count.value, productData.value["price"]);
+  addToCart(route.params.id, count.value, productData.value["price"], productData.value['name'], productData.value['image']['desktop']);
 }
 </script>
 
