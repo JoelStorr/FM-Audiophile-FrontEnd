@@ -50,4 +50,24 @@
   font-size: 4rem;
   color: $primary;
 }
+
+
+@media screen and (max-width: $tablet) {
+  .content-holder{
+    flex-direction: column;
+    flex-direction: column-reverse;
+    padding-top: 10rem;
+  }
+
+  .img-holder{
+    width: 100%;
+    padding: 0;
+  }
+  .text-holder{
+    width: 100%;
+    text-align: center;
+    padding: 5rem 10rem 0 10rem;
+  }
+  
+}
 </style>
