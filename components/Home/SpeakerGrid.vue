@@ -134,4 +134,56 @@
     justify-content: center;
   }
 }
+
+
+@media screen and (max-width: $tablet) {
+  
+  .speaker-hero{
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+  }
+
+  .img-holder{
+
+  }
+
+
+  .speaker{
+    width: 25%;
+    margin-bottom: 5rem; 
+  }
+
+  .rings{
+    top: -25rem;
+    left: -5%;
+    width: 110%;
+  }
+
+  .content-holder{
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    width: 40%;
+    text-align: center;
+    
+  }
+
+  .headphones-product{
+
+
+    & img{
+      flex: 1;
+      width: 50%;
+      height: auto;
+    }
+
+    & div{
+      flex: 1;
+    }
+  }
+
+}
 </style>
