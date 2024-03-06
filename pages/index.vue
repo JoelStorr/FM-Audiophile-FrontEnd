@@ -74,8 +74,6 @@
 .hero-bg-image {
   width: auto;
   height: 600px;
-
-  border: 1px solid red;
 }
 
 h1 {

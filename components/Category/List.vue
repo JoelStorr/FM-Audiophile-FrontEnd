@@ -18,10 +18,17 @@
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .category-cards {
   padding: 20rem 10% 15rem 10%;
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: $tablet) {
+  .category-cards {
+    padding-top: 10rem;
+  }
+}
+
 </style>
