@@ -116,6 +116,35 @@ h1 {
 
 }
 
+@media screen and (max-width: $phone) {
 
+  .hero-section{
+    top: 0;
+  }
+
+  .hero-info{
+    width: 80%;
+    height: auto;
+    padding-top: 10rem;
+
+    & h1{
+      font-size: 3.6rem;
+      margin: 0;
+    }
+
+    & .btn-primary {
+      margin-top: 2rem;
+      width: 60%;
+  }
+
+  }
+
+  .hero-spacer{
+    & img{
+      width: 150%;
+    }
+  }
+
+}
 
 </style>
