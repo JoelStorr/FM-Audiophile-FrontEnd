@@ -22,7 +22,11 @@
               @onNumberChange="numberChange"
               :index="productData['name']"
             />
-            <UIButtonPrimary @on-click="addtoCart">Add to cart</UIButtonPrimary>
+            <UIButtonPrimary 
+              :class="width < 1025 ? 'btn-padder': ''"
+              @on-click="addtoCart" 
+              :full-length="width < 1025 ? true : false "
+            >Add to cart</UIButtonPrimary>
           </div>
         </div>
       </section>
@@ -110,6 +114,13 @@ if (productData.value) {
   true;
 }
 
+
+let width = computed(()=>{
+  if(process.client){
+    return window.innerWidth;
+  }
+})
+
 function numberChange(value) {
   count.value = value;
 }
@@ -180,6 +191,7 @@ function addtoCart() {
     & li {
       font-size: 1.5rem;
       line-height: 200%;
+      padding: .5rem 0;
     }
 
     & span {
@@ -233,4 +245,38 @@ function addtoCart() {
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: $tablet) {
+  .features{
+    flex-direction: column;
+  }
+
+  .in-the-box{
+    margin: 5rem 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & h4{
+      margin: 0;
+    }
+
+    & ul{
+     padding-right: 20%; 
+    }
+  }
+
+  .add-cart-btn{
+    width: 100%;
+  }
+
+  .btn-padder{
+    margin-left: 3rem ;
+  }
+
+}
+
+
 </style>
