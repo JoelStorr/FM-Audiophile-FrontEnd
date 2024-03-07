@@ -3,8 +3,16 @@
     <header>
       <div class="main-header">
         <div class="logo-holder">
-          <img src="/shared/tablet/icon-hamburger.svg" v-if="width < 1025" @click="switchMenu"/>
-          <img src="/shared/desktop/logo.svg" alt="logo audiophile" @click="navigateTo('/')"/>
+          <img
+            src="/shared/tablet/icon-hamburger.svg"
+            v-if="width < 1025"
+            @click="switchMenu"
+          />
+          <img
+            src="/shared/desktop/logo.svg"
+            alt="logo audiophile"
+            @click="navigateTo('/')"
+          />
         </div>
 
         <nav v-if="width > 1025">
@@ -20,16 +28,20 @@
       </div>
       <hr />
       <div class="mobile-menu" v-if="showMobileMenu">
-      <CategoryList />
-    </div>
+        <CategoryList />
+      </div>
     </header>
     <div class="cart-card" v-if="showCartCard">
       <CartCard @hideCard="switchCard" />
     </div>
-    <div class="bg-dark" v-if="showCartCard || showMobileMenu" @click="hideOverlays"></div>
-    
+    <div
+      class="bg-dark"
+      v-if="showCartCard || showMobileMenu"
+      @click="hideOverlays"
+    ></div>
+
     <slot></slot>
-    <footer>
+    <footer v-if="width > 1025">
       <div class="highlight"></div>
       <div>
         <img src="/shared/desktop/logo.svg" alt="logo audiophile" />
@@ -49,9 +61,37 @@
           <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>
         </nav>
         <div>
-          <img class="social-icon"src="/shared/desktop/icon-facebook.svg" />
-          <img class="social-icon"src="/shared/desktop/icon-twitter.svg" />
-          <img class="social-icon"src="/shared/desktop/icon-instagram.svg" />
+          <img class="social-icon" src="/shared/desktop/icon-facebook.svg" />
+          <img class="social-icon" src="/shared/desktop/icon-twitter.svg" />
+          <img class="social-icon" src="/shared/desktop/icon-instagram.svg" />
+        </div>
+      </div>
+    </footer>
+    <footer v-else>
+      <div class="highlight"></div>
+      <div>
+        <div class="tablet-nav-link-footer">
+          <img src="/shared/desktop/logo.svg" alt="logo audiophile" />
+          <nav>
+            <NuxtLink class="nav-link" id="first-link" to="/">Home</NuxtLink>
+            <NuxtLink class="nav-link" to="/Headphones">Headphones</NuxtLink>
+            <NuxtLink class="nav-link" to="/Speakers">Speakers</NuxtLink>
+            <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>
+          </nav>
+        </div>
+        <p class="footer-text">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+        <div class="tablet-social-link-holder">
+          <p class="footer-text">Copyright 2021. All Rights Reserved</p>
+          <div>
+            <img class="social-icon" src="/shared/desktop/icon-facebook.svg" />
+            <img class="social-icon" src="/shared/desktop/icon-twitter.svg" />
+            <img class="social-icon" src="/shared/desktop/icon-instagram.svg" />
+          </div>
         </div>
       </div>
     </footer>
@@ -62,29 +102,28 @@
 let showCartCard = useState("showCartCard", () => false);
 let showMobileMenu = useState("showMobile", () => false);
 
-let width = computed(()=>{
-  if(process.client){
+let width = computed(() => {
+  if (process.client) {
     return window.innerWidth;
   }
-})
+});
 
-function switchMenu(){
-  showMobileMenu.value = !showMobileMenu.value
+function switchMenu() {
+  showMobileMenu.value = !showMobileMenu.value;
 }
 function switchCard() {
   showCartCard.value = !showCartCard.value;
 }
 
-function hideOverlays(){
-  if(showCartCard.value){
-    showCartCard.value = false
+function hideOverlays() {
+  if (showCartCard.value) {
+    showCartCard.value = false;
   }
 
-  if(showMobileMenu.value){
-    showMobileMenu.value = false
+  if (showMobileMenu.value) {
+    showMobileMenu.value = false;
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -111,20 +150,15 @@ header {
   font-size: 1.3rem;
   margin: 0 2rem;
   text-decoration: none;
-  
 
-  &:visited{
+  &:visited {
     color: $white;
   }
-
 }
 
 .nav-link:hover {
- color: $primary;
+  color: $primary;
 }
-
-
-
 
 .cart-btn {
   background-color: rgba(0, 0, 0, 0);
@@ -155,7 +189,7 @@ hr {
   border-top: 0.5px solid $p-dark-grey;
 }
 
-.mobile-menu{
+.mobile-menu {
   position: relative;
   background-color: $white;
   width: 100%;
@@ -195,20 +229,40 @@ footer {
   background-color: $primary;
 }
 
-
-.social-icon:hover{
-  filter: brightness(0) saturate(100%) invert(54%) sepia(47%) saturate(577%) hue-rotate(337deg) brightness(94%) contrast(93%);
+.social-icon:hover {
+  filter: brightness(0) saturate(100%) invert(54%) sepia(47%) saturate(577%)
+    hue-rotate(337deg) brightness(94%) contrast(93%);
 }
 
 @media screen and (max-width: $tablet) {
-  .logo-holder{
+  .logo-holder {
     display: flex;
     align-items: center;
 
-    & img:first-of-type{
+    & img:first-of-type {
       margin-right: 4rem;
     }
   }
-}
 
+  .tablet-nav-link-footer {
+    & nav {
+      padding-top: 2rem;
+    }
+  }
+
+  #first-link {
+    margin-left: 0;
+  }
+
+  .tablet-social-link-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .social-icon {
+    margin: 0 1rem;
+  }
+}
 </style>
