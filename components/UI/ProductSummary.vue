@@ -2,7 +2,8 @@
   <div class="content-holder">
     <img :src="props.item['image']" />
     <div class="name-holder">
-      <p>{{ props.item["name"].slice(0, 12) }}...</p>
+      <p v-if="width < 1025">{{ props.item['name'] }}</p>
+      <p v-else>{{ props.item["name"].slice(0, 12) }}...</p>
       <p>$ {{ props.item["price"] }}</p>
     </div>
     <p class="count">x{{ props.item["count"] }}</p>
@@ -10,6 +11,13 @@
 </template>
 <script setup>
 let props = defineProps({ item: Object });
+
+let width = computed(()=>{
+  if(process.client){
+    return window.innerWidth
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -48,5 +56,12 @@ img {
   align-self: flex-start;
   font-weight: bold;
   color: $p-dark-grey;
+}
+
+
+@media  screen and (max-width: $tablet) {
+  img{
+    width: 10%;
+  }
 }
 </style>

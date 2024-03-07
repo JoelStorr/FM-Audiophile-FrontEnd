@@ -302,4 +302,15 @@ form {
 .highlight {
   color: $primary;
 }
+
+@media screen and (max-width: $tablet) {
+  .layout-holder{
+    flex-direction: column;
+  }
+
+  .summary-holder{
+    width: 100%;
+    margin: 5rem 0;
+  }
+}
 </style>
