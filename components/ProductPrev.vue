@@ -1,5 +1,5 @@
 <template>
-  <div class="product-prev" v-if="props.imgLeft">
+  <div class="product-prev" v-if="props.imgLeft || width < 1025">
     <div class="image-holder">
       <img :src="props.product['categoryImage']['desktop']" />
     </div>
@@ -32,6 +32,14 @@ const props = defineProps({
   imgLeft: Boolean,
   product: Object,
 });
+
+const width = computed(()=>{
+  if(process.client){
+    return window.innerWidth
+  }
+})
+
+
 </script>
 
 <style lang="scss" scoped>
