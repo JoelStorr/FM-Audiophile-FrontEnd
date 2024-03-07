@@ -161,6 +161,10 @@ hr {
     padding: 0;
   }
 }
+
+@media screen and (max-width: $tablet) {
+  .card{
+    width: 60%;
+  }
+}
 </style>
-import type { UIButtonPrimary } from '#build/components'; import type { NuxtLink
-} from '#build/components';
