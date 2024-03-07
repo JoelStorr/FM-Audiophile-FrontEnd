@@ -2,9 +2,12 @@
   <div>
     <header>
       <div class="main-header">
-        <img src="/shared/desktop/logo.svg" alt="logo audiophile" />
+        <div class="logo-holder">
+          <img src="/shared/tablet/icon-hamburger.svg" v-if="width < 1025" @click="switchMenu"/>
+          <img src="/shared/desktop/logo.svg" alt="logo audiophile" @click="navigateTo('/')"/>
+        </div>
 
-        <nav>
+        <nav v-if="width > 1025">
           <NuxtLink class="nav-link" to="/">Home</NuxtLink>
           <NuxtLink class="nav-link" to="/Headphones">Headphones</NuxtLink>
           <NuxtLink class="nav-link" to="/Speakers">Speakers</NuxtLink>
@@ -16,11 +19,15 @@
         </button>
       </div>
       <hr />
+      <div class="mobile-menu" v-if="showMobileMenu">
+      <CategoryList />
+    </div>
     </header>
     <div class="cart-card" v-if="showCartCard">
       <CartCard @hideCard="switchCard" />
     </div>
-    <div class="bg-dark" v-if="showCartCard" @click="switchCard"></div>
+    <div class="bg-dark" v-if="showCartCard || showMobileMenu" @click="hideOverlays"></div>
+    
     <slot></slot>
     <footer>
       <div class="highlight"></div>
@@ -53,10 +60,31 @@
 
 <script setup>
 let showCartCard = useState("showCartCard", () => false);
+let showMobileMenu = useState("showMobile", () => false);
 
+let width = computed(()=>{
+  if(process.client){
+    return window.innerWidth;
+  }
+})
+
+function switchMenu(){
+  showMobileMenu.value = !showMobileMenu.value
+}
 function switchCard() {
   showCartCard.value = !showCartCard.value;
 }
+
+function hideOverlays(){
+  if(showCartCard.value){
+    showCartCard.value = false
+  }
+
+  if(showMobileMenu.value){
+    showMobileMenu.value = false
+  }
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -67,7 +95,7 @@ header {
   z-index: 5;
   width: 100vw;
   border: none;
-  padding: 2rem 10%;
+  padding: 2rem 0;
 }
 
 .main-header {
@@ -75,7 +103,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  padding: 0 10%;
   margin-bottom: 2rem;
 }
 
@@ -127,6 +155,13 @@ hr {
   border-top: 0.5px solid $p-dark-grey;
 }
 
+.mobile-menu{
+  position: relative;
+  background-color: $white;
+  width: 100%;
+  border-radius: 0 0 1rem 1rem;
+}
+
 footer {
   position: relative;
   margin-top: 15rem;
@@ -163,6 +198,17 @@ footer {
 
 .social-icon:hover{
   filter: brightness(0) saturate(100%) invert(54%) sepia(47%) saturate(577%) hue-rotate(337deg) brightness(94%) contrast(93%);
+}
+
+@media screen and (max-width: $tablet) {
+  .logo-holder{
+    display: flex;
+    align-items: center;
+
+    & img:first-of-type{
+      margin-right: 4rem;
+    }
+  }
 }
 
 </style>
