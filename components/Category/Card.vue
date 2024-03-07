@@ -53,4 +53,16 @@ img {
     top: -20%;
   }
 }
+
+@media screen and (max-width: $phone) {
+  .category-card{
+    width: 100%;
+    margin: 8rem 0 0 0;
+  }
+
+  img{
+    top: -30%;
+    width: 50%;
+  }
+}
 </style>

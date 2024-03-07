@@ -31,4 +31,12 @@
   }
 }
 
+@media screen and (max-width: $phone) {
+  .category-cards{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}
+
 </style>
