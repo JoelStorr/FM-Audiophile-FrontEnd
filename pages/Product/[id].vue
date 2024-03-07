@@ -276,6 +276,10 @@ function addtoCart() {
     margin-left: 3rem ;
   }
 
+  .related-products{
+    margin-bottom: 3rem;
+  }
+
 }
 
 

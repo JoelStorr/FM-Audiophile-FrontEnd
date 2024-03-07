@@ -46,4 +46,11 @@ img {
   width: 60%;
   height: auto;
 }
+
+@media screen and (max-width: $tablet) {
+  img {
+    width: 80%;
+    top: -20%;
+  }
+}
 </style>
