@@ -86,4 +86,12 @@ a {
   color: $primary;
   cursor: pointer;
 }
+
+@media screen and (max-width: $phone) {
+  .container{
+    width: 80vw;
+    margin-top: 2rem;
+  }
+}
+
 </style>
