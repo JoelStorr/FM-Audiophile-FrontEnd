@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="img-holder">
-      <img src="/shared/desktop/image-best-gear.jpg" />
+      <img src="/shared/desktop/image-best-gear.jpg" alt="person with headphones" />
     </div>
   </div>
 </template>

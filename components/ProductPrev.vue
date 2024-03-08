@@ -1,7 +1,7 @@
 <template>
   <div class="product-prev" v-if="props.imgLeft || width < 1025">
     <div class="image-holder">
-      <img :src="props.product['categoryImage']['desktop']" />
+      <img :src="props.product['categoryImage']['desktop']" alt="category image" />
     </div>
     <div class="content-holder">
       <p class="g-subtitle" v-if="props.product['new']">New Product</p>
@@ -22,7 +22,7 @@
       </NuxtLink>
     </div>
     <div class="image-holder">
-      <img :src="props.product['categoryImage']['desktop']" />
+      <img :src="props.product['categoryImage']['desktop']" alt="category image" />
     </div>
   </div>
 </template>

@@ -6,11 +6,13 @@
           <img
             src="/shared/tablet/icon-hamburger.svg"
             @click="switchMenu"
+            alt="burger menue"
           />
           <img
             src="/shared/desktop/logo.svg"
             alt="logo audiophile"
             @click="navigateTo('/')"
+
           />
         </div>
 
@@ -18,6 +20,7 @@
             src="/shared/tablet/icon-hamburger.svg"
             v-if="width < 450"
             @click="switchMenu"
+            alt="burger menu"
           />
           <img
             src="/shared/desktop/logo.svg"
@@ -72,9 +75,9 @@
           <NuxtLink class="nav-link" to="/Earphones">Earphones</NuxtLink>
         </nav>
         <div>
-          <img class="social-icon" src="/shared/desktop/icon-facebook.svg" />
-          <img class="social-icon" src="/shared/desktop/icon-twitter.svg" />
-          <img class="social-icon" src="/shared/desktop/icon-instagram.svg" />
+          <img class="social-icon" src="/shared/desktop/icon-facebook.svg"  alt="facebook logo"/>
+          <img class="social-icon" src="/shared/desktop/icon-twitter.svg" alt="twitter logo"/>
+          <img class="social-icon" src="/shared/desktop/icon-instagram.svg" alt="instagram logo"/>
         </div>
       </div>
     </footer>
@@ -99,9 +102,9 @@
         <div class="tablet-social-link-holder">
           <p class="footer-text">Copyright 2021. All Rights Reserved</p>
           <div>
-            <img class="social-icon" src="/shared/desktop/icon-facebook.svg" />
-            <img class="social-icon" src="/shared/desktop/icon-twitter.svg" />
-            <img class="social-icon" src="/shared/desktop/icon-instagram.svg" />
+            <img class="social-icon" src="/shared/desktop/icon-facebook.svg" alt="facebook logo"/>
+            <img class="social-icon" src="/shared/desktop/icon-twitter.svg" alt="twitter logo"/>
+            <img class="social-icon" src="/shared/desktop/icon-instagram.svg" alt="instagram logo"/>
           </div>
         </div>
       </div>

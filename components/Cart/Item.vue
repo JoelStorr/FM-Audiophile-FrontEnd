@@ -1,6 +1,6 @@
 <template>
   <div class="product-item">
-    <img :src="props.item['image']" />
+    <img :src="props.item['image']" alt="product image"/>
     <div class="name-holder">
       <p>{{ props.item["name"].slice(0, 12) }}...</p>
       <p>${{ props.item["price"] }}</p>

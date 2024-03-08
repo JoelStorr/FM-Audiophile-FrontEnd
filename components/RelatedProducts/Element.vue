@@ -2,7 +2,7 @@ import type { NuxtLink } from "#build/components";
 
 <template>
   <div class="content-holder">
-    <img class="product-image" :src="props.item['image']['desktop']" />
+    <img class="product-image" :src="props.item['image']['desktop']" alt="product image" />
 
     <h3>{{ props.item["name"] }}</h3>
     <NuxtLink :to="`/product/${props.item['slug']}`">

@@ -1,6 +1,6 @@
 <template>
   <div class="content-holder">
-    <img :src="props.item['image']" />
+    <img :src="props.item['image']" alt="bought product image" />
     <div class="name-holder">
       <p v-if="width < 1025">{{ props.item['name'] }}</p>
       <p v-else>{{ props.item["name"].slice(0, 12) }}...</p>

@@ -1,6 +1,6 @@
 <template>
   <button @click="emit('onClick')">
-    Shop <img src="/shared/desktop/icon-arrow-right.svg" />
+    Shop <img src="/shared/desktop/icon-arrow-right.svg" alt="icon arrow right"/>
   </button>
 </template>
 <script lang="ts" setup>

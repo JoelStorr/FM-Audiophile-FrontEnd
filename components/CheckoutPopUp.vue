@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <div class="card">
-      <img src="/checkout/icon-order-confirmation.svg" />
+      <img src="/checkout/icon-order-confirmation.svg" alt="checkout icon"/>
       <h3>Thank you <br />for your order</h3>
       <p>You will receive an email confirmation shortly.</p>
 
@@ -10,6 +10,7 @@
           <div class="order-item">
             <img
               :src="props.image"
+              alt="product image"
             />
             <div class="name-holder">
               <div class="name">

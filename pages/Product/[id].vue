@@ -6,7 +6,7 @@
     <div v-if="loading">
       <section class="main-product-section">
         <div class="image-holder">
-          <img :src="productData['image']['desktop']" />
+          <img :src="productData['image']['desktop']" alt="product image"/>
         </div>
         <div class="product-content">
           <p class="g-overline higlight" v-if="productData['new']">
@@ -51,11 +51,11 @@
 
       <section class="image-grid">
         <div class="image-grid-column">
-          <img :src="productData['gallery']['first']['desktop']" />
-          <img :src="productData['gallery']['second']['desktop']" />
+          <img :src="productData['gallery']['first']['desktop']" alt="gallary image"/>
+          <img :src="productData['gallery']['second']['desktop']" alt="gallary image"/>
         </div>
         <div class="image-grid-column-full">
-          <img :src="productData['gallery']['third']['desktop']" />
+          <img :src="productData['gallery']['third']['desktop']" alt="gallary image"/>
         </div>
       </section>
 

@@ -2,9 +2,9 @@
   <section class="speaker-grid">
     <div class="speaker-hero">
       <div class="img-holder">
-        <img class="speaker" src="/home/desktop/image-speaker-zx9.png" />
+        <img class="speaker" src="/home/desktop/image-speaker-zx9.png" alt="speacker image ZX9 model" />
       </div>
-      <img class="rings" src="/home/desktop/pattern-circles.svg" />
+      <img class="rings" src="/home/desktop/pattern-circles.svg" alt="cirlce pattern" />
       <div class="content-holder">
         <h1>
           ZX9 <br />
@@ -30,7 +30,7 @@
     </div>
 
     <div class="headphones-product">
-      <img src="/home/desktop/image-earphones-yx1.jpg" />
+      <img src="/home/desktop/image-earphones-yx1.jpg"  alt="earphones image YX1 Earphones"/>
       <div class="">
         <h3>YX1 Earphones</h3>
         <NuxtLink to="/Product/yx1-earphones">
