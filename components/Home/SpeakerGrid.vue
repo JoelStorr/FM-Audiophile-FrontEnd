@@ -135,6 +135,13 @@
   }
 }
 
+@media screen and (min-width: $largeScreen) {
+  .speaker-grid{
+    padding: 20rem 25% 15rem 25%;
+  }
+}
+
+
 @media screen and (max-width: $tablet) {
   .speaker-hero {
     flex-direction: column;
@@ -223,5 +230,13 @@
       }
     }
   }
+
+
+  @media screen and (min-width: $largeScreen) {
+    .speaker-grid{
+      padding: 2rem 25% 2rem 25%;
+    }
+  }
+
 }
 </style>

@@ -84,6 +84,12 @@ h1 {
   padding: 0 10%;
 }
 
+@media screen and (min-width: $largeScreen) {
+  .hero-info{
+    padding-left: 25%;
+  }
+}
+
 
 @media screen and (max-width: $tablet) {
   .hero-section{
@@ -146,5 +152,6 @@ h1 {
   }
 
 }
+
 
 </style>

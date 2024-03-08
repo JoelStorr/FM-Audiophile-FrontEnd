@@ -65,9 +65,9 @@
         <RelatedProductsList :list="productData['others']" />
       </section>
     </div>
-    <CategoryList />
-    <AudioText />
   </div>
+  <CategoryList />
+  <AudioText />
 </template>
 
 <script setup>
@@ -245,6 +245,14 @@ function addtoCart() {
   flex-direction: column;
   align-items: center;
 }
+
+
+@media screen and (min-width: $largeScreen) {
+  .product-content-holder {
+  padding: 4rem 25% 1rem 25%;
+}
+}
+
 
 @media screen and (max-width: $tablet) {
   .features{

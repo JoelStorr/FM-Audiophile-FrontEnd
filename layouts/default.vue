@@ -23,7 +23,7 @@
             src="/shared/desktop/logo.svg"
             alt="logo audiophile"
             @click="navigateTo('/')"
-            v-if="width < 450"
+            v-if="width < 450 || width > 1025"
           />
 
         <nav v-if="width > 1025">
@@ -52,7 +52,7 @@
     ></div>
 
     <slot></slot>
-    <footer v-if="width > 1025">
+    <footer  class="footer-hider-desktop">
       <div class="highlight"></div>
       <div>
         <img src="/shared/desktop/logo.svg" alt="logo audiophile" />
@@ -78,7 +78,7 @@
         </div>
       </div>
     </footer>
-    <footer v-else>
+    <footer  class="footer-hider-tablet">
       <div class="highlight"></div>
       <div>
         <div class="tablet-nav-link-footer">
@@ -209,11 +209,11 @@ hr {
 
 footer {
   position: relative;
-  margin-top: 15rem;
   background-color: $p-black;
   padding: 5rem 10% 2rem 10%;
   color: $white;
   display: flex;
+  flex-direction: row;
 }
 
 .link-holder {
@@ -244,6 +244,14 @@ footer {
 .social-icon:hover {
   filter: brightness(0) saturate(100%) invert(54%) sepia(47%) saturate(577%)
     hue-rotate(337deg) brightness(94%) contrast(93%);
+}
+
+.footer-hider-tablet{
+  display: none;
+}
+
+.footer-hider-desktop{
+  display: flex;
 }
 
 @media screen and (max-width: $tablet) {
@@ -281,6 +289,15 @@ footer {
   .social-icon {
     margin: 0 1rem;
   }
+
+  .footer-hider-tablet{
+    display: flex;
+  }
+
+  .footer-hider-desktop{
+    display: none;
+  }
+
 }
 
 

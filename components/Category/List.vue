@@ -52,4 +52,10 @@
   }
 }
 
+@media screen and (min-width: $largeScreen) {
+  .category-cards{
+    padding: 20rem 25% 15rem 25%;
+  }
+}
+
 </style>

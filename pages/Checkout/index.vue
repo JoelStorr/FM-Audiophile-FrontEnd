@@ -122,7 +122,7 @@
         </div>
         <div class="row">
           <p>SHIPPING</p>
-          <h6>$ 50</h6>
+          <h6>$ free</h6>
         </div>
         <div class="row">
           <p>VAT (INCLUDED)</p>
@@ -243,6 +243,7 @@ function showPopUp() {
   width: 100vw;
   padding: 5rem 10%;
   background-color: $p-grey;
+  padding-bottom: 10rem;
 }
 
 .layout-holder {

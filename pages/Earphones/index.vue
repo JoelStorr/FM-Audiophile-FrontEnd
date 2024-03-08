@@ -41,4 +41,11 @@ let categoryProducts = computed(() => {
   width: 100vw;
   padding: 0 10%;
 }
+
+@media screen and (min-width: $largeScreen) {
+  .products{
+     padding: 0 25%;
+  }
+}
+
 </style>

@@ -22,7 +22,7 @@
   width: 100%;
   display: flex;
 
-  padding: 15rem 10% 2rem 10%;
+  padding: 10rem 10% 15rem 10%;
 }
 
 .img-holder {
@@ -49,6 +49,12 @@
 .highlight {
   font-size: 4rem;
   color: $primary;
+}
+
+@media screen and (min-width: $largeScreen) {
+  .content-holder{
+     padding: 10rem 25% 15rem 25%;
+  }
 }
 
 
