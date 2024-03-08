@@ -4,19 +4,32 @@
       name="Headphones"
       to="/headphones"
       img-src="/shared/desktop/image-category-thumbnail-headphones.png"
+      @on-click="handelClick"
     />
     <CategoryCard
       name="Speakers"
       to="/speakers"
       img-src="/shared/desktop/image-category-thumbnail-speakers.png"
+      @on-click="handelClick"
     />
     <CategoryCard
       name="Earphones"
       to="/headphones"
       img-src="/shared/desktop/image-category-thumbnail-earphones.png"
+      @on-click="handelClick"
     />
   </section>
 </template>
+
+<script setup>
+
+  let emits = defineEmits(['onClick']);
+
+  function handelClick(){
+    emits('onClick');
+  }
+
+</script>
 
 <style lang="scss" scoped>
 .category-cards {

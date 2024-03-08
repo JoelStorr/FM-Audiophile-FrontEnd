@@ -5,7 +5,7 @@
 
       <h6>{{ props.name }}</h6>
       <NuxtLink :to="props.to">
-        <UIButtonSimple></UIButtonSimple>
+        <UIButtonSimple @on-click="handleClick"></UIButtonSimple>
       </NuxtLink>
     </div>
   </div>
@@ -13,6 +13,13 @@
 
 <script setup>
 let props = defineProps(["imgSrc", "name", "to"]);
+let emits = defineEmits(['onClick'])
+
+function handleClick(){
+  emits('onClick');
+}
+
+
 </script>
 
 <style lang="scss" scoped>

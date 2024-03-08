@@ -39,7 +39,7 @@
       </div>
       <hr />
       <div class="mobile-menu" v-if="showMobileMenu">
-        <CategoryList />
+        <CategoryList @on-click="switchMenu" />
       </div>
     </header>
     <div class="cart-card" v-if="showCartCard">
