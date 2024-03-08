@@ -2,10 +2,9 @@
   <div>
     <header>
       <div class="main-header">
-        <div class="logo-holder">
+        <div class="logo-holder" v-if="width > 450 && width < 1025">
           <img
             src="/shared/tablet/icon-hamburger.svg"
-            v-if="width < 1025"
             @click="switchMenu"
           />
           <img
@@ -14,6 +13,18 @@
             @click="navigateTo('/')"
           />
         </div>
+
+         <img
+            src="/shared/tablet/icon-hamburger.svg"
+            v-if="width < 450"
+            @click="switchMenu"
+          />
+          <img
+            src="/shared/desktop/logo.svg"
+            alt="logo audiophile"
+            @click="navigateTo('/')"
+            v-if="width < 450"
+          />
 
         <nav v-if="width > 1025">
           <NuxtLink class="nav-link" to="/">Home</NuxtLink>
