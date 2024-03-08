@@ -319,7 +319,10 @@ footer {
     padding-bottom: 5rem;
   }
 
-
+  .highlight{
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
 }
 </style>
