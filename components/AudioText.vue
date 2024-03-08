@@ -70,4 +70,20 @@
   }
   
 }
+
+
+@media screen and (max-width: $phone){
+  .text-holder{
+    padding: 0rem;
+
+    & h2{
+      font-size: 2.8rem;
+    }
+
+    & .highlight{
+      font-size: 2.8rem;
+    }
+  }
+}
+
 </style>
