@@ -1,7 +1,7 @@
 <template>
   <div class="category-card">
     <div class="card">
-      <img :src="props.imgSrc" />
+      <img :src="props.imgSrc" alt="category image"/>
 
       <h6>{{ props.name }}</h6>
       <NuxtLink :to="props.to">

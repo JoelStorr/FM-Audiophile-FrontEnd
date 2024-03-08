@@ -15,7 +15,7 @@
       </NuxtLink>
     </div>
     <div class="hero-spacer">
-      <img src="/home/desktop/headphones-hero.png" />
+      <img src="/home/desktop/headphones-hero.png" alt="hero image"/>
     </div>
   </section>
   <CategoryList />
