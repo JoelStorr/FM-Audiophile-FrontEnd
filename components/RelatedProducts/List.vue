@@ -22,4 +22,15 @@ let props = defineProps({
   width: 100%;
   position: relative;
 }
+
+
+@media screen and (max-width: $phone) {
+  .related-product-lits {
+    flex-direction: column;
+  }
+
+
+
+}
+
 </style>

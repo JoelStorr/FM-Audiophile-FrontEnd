@@ -283,4 +283,46 @@ function addtoCart() {
 }
 
 
+@media screen and (max-width: $phone) {
+
+  .main-product-section{
+    flex-direction: column;
+  }
+
+  .product-content{
+    max-width: 100%;
+  }
+
+
+  .image-holder{
+    max-width: 100%;
+  }
+
+  .in-the-box{
+    flex-direction: column;
+
+    & ul{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .image-grid{
+    flex-direction: column;
+  }
+
+  .image-grid-column-full{
+    margin: 0;
+    padding: 0;
+  }
+
+  .image-grid-column{
+    & img{
+      margin: 1.5rem 0;
+    }
+  }
+
+}
+
+
 </style>
