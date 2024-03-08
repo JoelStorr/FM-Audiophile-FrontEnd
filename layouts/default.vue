@@ -230,6 +230,7 @@ footer {
 
 .footer-text {
   margin-top: 3rem;
+  color: $p-dark-grey;
 }
 
 .highlight {
@@ -270,10 +271,55 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    & .footer-text{
+      margin-bottom: 5rem;
+    }
+
   }
 
   .social-icon {
     margin: 0 1rem;
   }
+}
+
+
+@media screen and (max-width: $phone) {
+  
+  .tablet-nav-link-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & nav{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .nav-link{
+      margin: 1rem 0;
+      font-weight: bold;
+      
+    }
+
+  }
+  
+  .footer-text{
+    text-align: center;
+    
+    color: $p-dark-grey;
+  }
+
+  .tablet-social-link-holder{
+    flex-direction: column;
+    padding-bottom: 5rem;
+  }
+
+
+
 }
 </style>
