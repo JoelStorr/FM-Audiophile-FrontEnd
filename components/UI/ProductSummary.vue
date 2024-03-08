@@ -64,4 +64,10 @@ img {
     width: 10%;
   }
 }
+
+@media screen and (max-width: $phone) {
+  img{
+    width: 25%;
+  }
+}
 </style>

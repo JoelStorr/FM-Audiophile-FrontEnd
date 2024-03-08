@@ -19,7 +19,7 @@
               <p>${{ props.price }}</p>
             </div>
           </div>
-          <hr v-if="count > 1" />
+          <hr v-if="cartCount > 1" />
           <div class="more-holder">
             <p v-if="cartCount > 1" class="more-items">
               and {{ cartCount - 1 }} other item(s)
@@ -166,5 +166,31 @@ hr {
   .card{
     width: 60%;
   }
+}
+
+@media screen and (max-width: $phone) {
+    
+  .card{
+   width: 90%; 
+  }
+
+  .order-item-holder{
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .grand-total{
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .total-card{
+    flex-direction: column;
+  }
+
+  .name-holder{
+    margin-top: 2rem;
+  }
+
 }
 </style>

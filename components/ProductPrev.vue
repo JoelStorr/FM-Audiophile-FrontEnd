@@ -97,6 +97,11 @@ img {
   img{
     width: 100%;
   }
+
+  .content-holder{
+    padding: 1rem 0;
+  }
+
 }
 
 </style>

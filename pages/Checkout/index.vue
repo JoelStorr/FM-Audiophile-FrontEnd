@@ -313,4 +313,14 @@ form {
     margin: 5rem 0;
   }
 }
+
+@media screen and (max-width: $phone) {
+
+  .form-holder{
+    & .row{
+      flex-direction: column;
+    }
+  }
+}
+
 </style>
