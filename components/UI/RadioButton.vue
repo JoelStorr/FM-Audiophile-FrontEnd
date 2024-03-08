@@ -1,5 +1,5 @@
 <template>
-  <div class="label" :class="props.isChecked == props.value ? 'active' : ''">
+  <div class="label" :class="props.isChecked == props.value ? 'active' : ''" @click="changeCeck">
     <label class="form-control">
       <input
         type="radio"
@@ -35,6 +35,11 @@ function changeCeck(): void {
   padding: 1.5rem 1rem;
   width: 100%;
   margin: 1rem;
+  cursor: pointer;
+}
+
+.label:hover{
+  border: 0.1rem solid $primary;
 }
 
 .active {
@@ -95,7 +100,6 @@ input[type="radio"]::before {
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em $primary;
-  /* Windows High Contrast Mode */
   background-color: CanvasText;
 }
 

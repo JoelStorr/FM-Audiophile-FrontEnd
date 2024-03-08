@@ -87,7 +87,7 @@
                 >Cash on Delivery</UIRadioButton
               >
             </div>
-            <div class="row">
+            <div class="row" v-if="paymentMethod == 'e-Money'">
               <UITextField
                 placeHolder="1234567890"
                 :error="false"
@@ -100,6 +100,10 @@
                 @valueChange="eMoneyPinChange"
                 >e-Money PIN</UITextField
               >
+            </div>
+            <div v-else class="cash-delivery">
+              <img src="/checkout/icon-cash-on-delivery.svg" />
+              <p>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
             </div>
           </section>
         </form>
@@ -302,6 +306,19 @@ form {
 .highlight {
   color: $primary;
 }
+
+
+.cash-delivery{
+  display: flex;
+  align-items: center;
+
+  & img{
+    width: 5rem;
+    height: 5rem;
+    margin-right: 2rem;
+  }
+}
+
 
 @media screen and (max-width: $tablet) {
   .layout-holder{
