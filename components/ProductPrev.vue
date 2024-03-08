@@ -37,7 +37,7 @@ const width = computed(()=>{
   if(process.client){
     return window.innerWidth
   }
-})
+});
 
 
 </script>
@@ -84,6 +84,19 @@ img {
     padding: 1rem 10rem;
   }
 
+}
+
+
+@media screen and (max-width: $phone) {
+  .image-holder{
+    width: 60rem;
+    height: auto;
+    max-width: 100%;
+  }
+
+  img{
+    width: 100%;
+  }
 }
 
 </style>
