@@ -135,10 +135,8 @@
   }
 }
 
-
 @media screen and (max-width: $tablet) {
-  
-  .speaker-hero{
+  .speaker-hero {
     flex-direction: column;
     height: auto;
     align-items: center;
@@ -146,44 +144,84 @@
     padding: 5rem 0;
   }
 
-  .img-holder{
-
-  }
-
-
-  .speaker{
+  .speaker {
     width: 25%;
-    margin-bottom: 5rem; 
+    margin-bottom: 5rem;
   }
 
-  .rings{
+  .rings {
     top: -25rem;
     left: -5%;
     width: 110%;
   }
 
-  .content-holder{
+  .content-holder {
     justify-content: center;
     align-items: center;
     padding-right: 0;
     width: 40%;
     text-align: center;
-    
   }
 
-  .headphones-product{
-
-
-    & img{
+  .headphones-product {
+    & img {
       flex: 1;
       width: 50%;
       height: auto;
     }
 
-    & div{
+    & div {
       flex: 1;
     }
   }
 
+  @media screen and (max-width: $phone) {
+    .speaker {
+      width: 45%;
+    }
+
+    .speaker-hero {
+      & p {
+        width: 90%;
+      }
+    }
+
+    .content-holder {
+      width: 90%;
+      & p {
+        width: 90%;
+      }
+    }
+
+    .rings {
+      top: -20%;
+      left: -35%;
+      width: 170%;
+    }
+
+    .speaker-product {
+      background-image: url("/home/mobile/image-speaker-zx7.jpg");
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      & h2 {
+        font-size: 2.8rem;
+      }
+    }
+
+    .headphones-product {
+      flex-direction: column;
+
+      & img {
+        width: 100%;
+        margin: 0;
+      }
+
+      & div {
+        margin: 2rem 0 0 0;
+        padding: 2rem;
+      }
+    }
+  }
 }
 </style>
